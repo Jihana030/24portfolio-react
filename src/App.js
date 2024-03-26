@@ -1,8 +1,8 @@
-import './main.css';
-import './root.css';
-import './sub.css';
-import './common.css';
-import Header from './components/header';
+import "./css/main.css";
+import "./css/root.css";
+import "./css/sub.css";
+import "./css/common.css";
+import Header from "./components/Header.jsx";
 
 function App() {
   return (
