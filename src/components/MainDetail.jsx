@@ -35,7 +35,7 @@ function MainDetail() {
         </div>
       </div>
       <div className="audio_cnt">
-        <audio id="prf_audio" src=""></audio>
+        <audio id="prf_audio" src="" autoPlay={audio ? true : false}></audio>
       </div>
       <div className="subtitle_wrap">
         <p>안녕하세요.</p>
