@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // function audio(playBtn) {
 //   // audio pause
@@ -18,7 +18,29 @@ import { useState } from "react";
 
 function MainDetail() {
   const [audio, setAudio] = useState(false);
-  const [play, setPlay] = useState(true);
+  const myRef = useRef(null);
+
+  const start = () => {
+    if (myRef.current) {
+      myRef.current.play();
+    }
+    setAudio(true);
+  };
+  const stop = () => {
+    if (myRef.current) {
+      myRef.current.pause();
+    }
+    setAudio(false);
+  };
+
+  useEffect(() => {
+    if (!myRef.current) return;
+    if (audio) {
+      myRef.current.play();
+    } else {
+      myRef.current.pause();
+    }
+  }, [audio]);
 
   return (
     <section id="introduce">
@@ -26,7 +48,11 @@ function MainDetail() {
         <div id="prf_img" className="profile_img">
           <img src="./img/profile_replace.jpg" alt="대체이미지" />
         </div>
-        <div id="play_btn" className={`start_img ${audio ? "st_opacity" : ""}`}>
+        <div
+          id="play_btn"
+          className={`start_img`}
+          onClick={audio ? start : stop}
+        >
           <img
             src="./assets/img/start.png"
             alt="재생"
@@ -35,7 +61,7 @@ function MainDetail() {
         </div>
       </div>
       <div className="audio_cnt">
-        <audio id="prf_audio" src="" autoPlay={audio ? true : false}></audio>
+        <audio id="prf_audio" src="" ref={myRef}></audio>
       </div>
       <div className="subtitle_wrap">
         <p>안녕하세요.</p>

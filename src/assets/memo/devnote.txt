@@ -220,7 +220,16 @@ autoPlay를 쓰면 pause 기능이 없어지고.. 오디오 라이브러리를 �
 
 사진은 고정이고, 자막은 계속 바뀔거고, 재생버튼을 누르면 오디오가 재생되고 일시정지되게 하고 싶다! 끄앙!
 
+오디오라는건.. 생각보다 많은 작업이 필요했던 모양이다.
+https://velog.io/@chocolajin/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%98%A4%EB%94%94%EC%98%A4-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0-with-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A6%AC%EC%BD%94%EC%9D%BC
+와. ref로 play와 pause에 접근할 수 있다고 한다.
+아, 근데 클릭해서 이미지가 나오고 안나오고는 이제 어떻게 한담..
+생각해보니 클래스로 제어하지 않으면 되지 않는가.
 
+https://velog.io/@jmmoon0801/React-useRef%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EC%9D%8C%EC%95%85-%ED%8C%8C%EC%9D%BC-%EC%9E%AC%EC%83%9D%ED%95%98%EA%B8%B0
+
+오 . 뭔가 된 거 같은데, 그.. 오디오파일이 아직 없어서 제대로 되는지 확인 할 수가 없다.
+기존엔 가수의 음악을 넣었다가 저작권이 걱정되어서 igmore로 빼두었는데 새로 하는김에 아예 삭제를 했다. 샘플오디오를 하나 구해야겠다.
 
 
 
