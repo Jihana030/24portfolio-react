@@ -1,13 +1,12 @@
-
-function Layout() {
+export default function Layout() {
   return (
     <header>
-      <div class="logo_wrap">
+      <div className="logo_wrap">
         <p>
           <a href="../index.html">logo</a>
         </p>
       </div>
-      <nav class="nav_wrap">
+      <nav className="nav_wrap">
         <ul>
           <li>
             <a href="">이력서/자소서</a>
@@ -28,5 +27,3 @@ function Layout() {
     </header>
   );
 }
-
-export default Header;

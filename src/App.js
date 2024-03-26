@@ -3,11 +3,13 @@ import "./css/root.css";
 import "./css/sub.css";
 import "./css/common.css";
 import Layout from "./components/Layout.jsx";
+import MainDetail from "./components/MainDetail.jsx";
 
 function App() {
   return (
     <div className="App">
-      <Layout></Layout>
+      <Layout />
+      <MainDetail/>
     </div>
   );
 }
