@@ -2,12 +2,12 @@ import "./css/main.css";
 import "./css/root.css";
 import "./css/sub.css";
 import "./css/common.css";
-import Header from "./components/Header.jsx";
+import Layout from "./components/Layout.jsx";
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
+      <Layout></Layout>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 
-function Header() {
+function Layout() {
   return (
     <header>
       <div class="logo_wrap">
