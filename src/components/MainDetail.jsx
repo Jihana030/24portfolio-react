@@ -1,5 +1,7 @@
 import profileImg from "../assets/img/profile_replace.jpg";
+import AudioPlayer from "./AudioPlayer";
 import Player from "./Player";
+
 
 function MainDetail() {
 
@@ -11,9 +13,7 @@ function MainDetail() {
         </div>
         <Player/>
       </div>
-      <div className="audio_cnt">
-        <audio id="prf_audio" src=""></audio>
-      </div>
+      <AudioPlayer/>
       <div className="subtitle_wrap">
         <p>안녕하세요.</p>
       </div>

@@ -1,29 +1,8 @@
-import { useEffect } from "react";
-import { useState } from "react";
 import playImg from "../assets/img/start.png";
+import useAudio from './hooks/useAudio.jsx';
 
-const useAudio = (url) => {
-  const [audio] = useState(new Audio(url));
-  const [playing, setPlaying] = useState(false);
-
-  const toggle = () => setPlaying(!playing);
-
-  useEffect(() => {
-    playing ? audio.play() : audio.pause();
-  }, [playing]);
-
-  useEffect(() => {
-    audio.addEventListener('ended', () => setPlaying(false));
-    return () => {
-      audio.removeEventListener('ended', () => setPlaying(false));
-    }
-  }, []);
-
-  return [playing, toggle];
-};
-
-const Player = ({ url }) => {
-  const [playing, toggle] = useAudio(url);
+const Player = ({ url: audioUrl }) => {
+  const [playing, toggle] = useAudio(audioUrl);
 
   return (
     <div id="play_btn" className="start_img" onClick={toggle}>
@@ -35,6 +14,6 @@ const Player = ({ url }) => {
       />
     </div>
   );
-}
+};
 
 export default Player;
