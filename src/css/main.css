@@ -25,6 +25,7 @@
     height: 200px;
     border-radius: 100px;
     overflow: hidden;
+    cursor: pointer;
 }
 #introduce .audio_wrap .profile_img img {
     width: 100%;
@@ -44,7 +45,7 @@
     object-fit: cover;
 }
 
-#introduce .audio_wrap .start_img.st_opacity {
+#introduce .audio_wrap .start_img .st_opacity {
     opacity: 0;
     
     /* cursor: default; */
