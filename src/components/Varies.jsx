@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import cardImg from '../img/menucard06.png';
 
 /*
@@ -7,22 +8,29 @@ import cardImg from '../img/menucard06.png';
   card_wrap이 map으로 반복생성 되어야 함. 
 */
 
-function Varies(){
+function CardList( title, explan, onHover){
+  //마우스오버 되면 dis-none이 사라지도록
+  const className = `card_explan ${ onHover ? '' : 'dis-none' }`;
+  return(
+    <div className="card_wrap">
+      <a href="" className="card">
+        <p className="card_title">{title}</p>
+        <img src={cardImg} alt="카테고리카드" />
+      </a>
+      <div className={className}>
+        <ul>
+          {explan}
+        </ul>
+      </div>
+    </div>
+  )
+}
+
+function Varies(onHover){
+  const [card, setCard] = useState([]);
     return (
       <div className="subject_wrap">
-        <div className="card_wrap">
-          <a href="" className="card">
-            <p className="card_title">해리포터</p>
-            <img src={cardImg} alt="카테고리카드" />
-          </a>
-          <div className="card_explan dis-none">
-            <ul>
-              <li>학원 마지막 프로젝트</li>
-              <li>1등으로 수료</li>
-              <li>역사, 교수소개, 연혁 작업</li>
-            </ul>
-          </div>
-        </div>
+        <CardList key={date} title={title} explan={explan} onHover={onHover}/>
       </div>
     )
 }
