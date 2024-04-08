@@ -1,5 +1,7 @@
 import MainDetail from './components/MainDetail';
-import Varies from './components/Varies';
+import App from "./App";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Varies from "./components/Varies";
 
 function Main() {
   return (
