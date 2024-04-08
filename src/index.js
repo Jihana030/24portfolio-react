@@ -10,9 +10,9 @@ root.render(
     <App>
       <Routes>
         <Route path='/' element={<App/>} />
-        <Route path='varies' element={<Varies/>} />
-        <Route path='varies/luckydraw' element={<App/>} />
-        <Route path='varies/guestbook' element={<App/>} />
+        <Route path='/varies' element={<Varies/>} />
+        <Route path='/varies/luckydraw' element={<App/>} />
+        <Route path='/varies/guestbook' element={<App/>} />
       </Routes>
     </App>
   </BrowserRouter>
