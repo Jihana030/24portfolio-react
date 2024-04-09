@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { collection, getDocs, query } from "firebase/firestore";
 import { db } from "../firebase";
 import CardList from "./CardList";
@@ -27,8 +27,12 @@ function Varies() {
   }, [varies]);
   return (
     <div className="subject_wrap">
-      <ul>{categoryItems && categoryItems.map((doc) => <li>{doc.id}</li>)}</ul>
-      <CardList></CardList>
+      {categoryItems &&
+        categoryItems.map((doc) => (
+          <NavLink to={`${varies}/${doc.id}`} key={doc.id}>
+            <CardList/>
+          </NavLink>
+        ))}
     </div>
   );
 }
