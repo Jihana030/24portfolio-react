@@ -9,7 +9,7 @@ function Main() {
       <App>
         <Routes>
           <Route path="/" element={<MainDetail />} />
-          <Route path="/varies" element={<Varies />} />
+          <Route path="/:varies" element={<Varies />} />
           <Route path="/varies/luckydraw" element={<MainDetail />} />
           <Route path="/varies/guestbook" element={<MainDetail />} />
         </Routes>

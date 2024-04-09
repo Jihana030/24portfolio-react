@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { collection, getDocs, query } from "firebase/firestore";
 import { db } from "../firebase";
 import CardList from "./CardList";
@@ -13,28 +13,22 @@ import CardList from "./CardList";
 
 function Varies() {
   // navLink
-  const { categoryId } = useParams();
+  const { varies } = useParams();
   const [categoryItems, setCategoryItems] = useState();
-  
-  async function getDocments(categoryId) {
-    const categoryRef = query(collection(db, categoryId));
+
+  async function getDocments(varies) {
+    const categoryRef = query(collection(db, varies));
     const queryCategory = await getDocs(categoryRef);
     setCategoryItems(queryCategory.docs);
   }
-  
+
   useEffect(() => {
-    getDocments(categoryId);
-  }, [categoryId]);
+    getDocments(varies);
+  }, [varies]);
   return (
     <div className="subject_wrap">
-      <CardList>
-        {categoryItems &&
-          categoryItems.map((doc) => (
-            <NavLink to={`/${categoryId}/${doc.id}`} key={doc.id}>
-              {doc.id}
-            </NavLink>
-          ))}
-      </CardList>
+      <ul>{categoryItems && categoryItems.map((doc) => <li>{doc.id}</li>)}</ul>
+      <CardList></CardList>
     </div>
   );
 }
