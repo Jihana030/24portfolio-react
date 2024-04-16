@@ -437,6 +437,19 @@ FirebaseError: Function collection() cannot be called with an empty path.
 자, 이제 예상대로 CardList에서 에러가 난다! 드디어!
 indexOf를 찾을 수 없다는데 무슨말일까!
 
+indexOf를 쓸 수 없는 객체인데 indexOf 기능을 써서 그런가본데..
+아. 먼가 꼬였다.
+지금 하려던게 varies에서 보이는 cardlist가 각 게시물 한 줄의 역할을 하도록 할거였는데
+참고한 블로그는 링크이동이어서. 으음..
+navlink안에 카드이미지가 map으로 생겨야하고, 그 카드이미지를 cardlist 컴포넌트로 보여주려는건데.
+지금 cardlist는 navlink를 눌렀을때 이동해서 보여지는 내용이다. 
+서로 목적이 다른데 참고했더니 좀 꼬인 것 같다.
+
+...아 먼가 어케야할지 답답해졌어.
+오! 내가 해냄.
+그래. cardlist에서 useEffect를 안쓰면 되는거다. 이제 각각의 카드에서 그걸 쓰면 되는거니까.
+유레카!
+
 
 
 

@@ -30,7 +30,7 @@ function Varies() {
       {categoryItems &&
         categoryItems.map((doc) => (
           <NavLink to={`${cardList}/${doc.id}`} key={doc.id}>
-            <CardList>{doc.id}</CardList>
+            <CardList title={doc.id}/>
           </NavLink>
         ))}
     </div>
