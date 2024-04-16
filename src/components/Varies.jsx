@@ -13,24 +13,24 @@ import CardList from "./CardList";
 
 function Varies() {
   // navLink
-  const { varies } = useParams();
+  const { cardList } = useParams();
   const [categoryItems, setCategoryItems] = useState();
 
-  async function getDocments(varies) {
-    const categoryRef = query(collection(db, varies));
+  async function getDocments(cardList) {
+    const categoryRef = query(collection(db, cardList));
     const queryCategory = await getDocs(categoryRef);
     setCategoryItems(queryCategory.docs);
   }
 
   useEffect(() => {
-    getDocments(varies);
-  }, [varies]);
+    getDocments('cardList');
+  }, [cardList]);
   return (
     <div className="subject_wrap">
       {categoryItems &&
         categoryItems.map((doc) => (
-          <NavLink to={`${varies}/${doc.id}`} key={doc.id}>
-            <CardList />
+          <NavLink to={`${cardList}/${doc.id}`} key={doc.id}>
+            <CardList>{doc.id}</CardList>
           </NavLink>
         ))}
     </div>
