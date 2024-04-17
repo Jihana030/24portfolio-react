@@ -504,6 +504,11 @@ undefined가 안되게는 했는데 제대로 쓸려면 firebase에 컬렉션을
 방명록 페이지의 틀은 얼추 되었다.
 이제 방명록을 map해서 데이터를 다 불러올 수 있어야한다.
 
+map이 되지 않는다. 왜 똑같이 데려왔는데 varies는 되고, 방명록은 되지 않을까?
+바꿔야 할 부분은 다 바꿨는데 map을 이해할수없단다.
+Cannot read properties of undefined
+null 인 모양이다. 왜ㅐ..?
+categoryItems에 값이 없는 것 같다. 왜..?
 
 
 
