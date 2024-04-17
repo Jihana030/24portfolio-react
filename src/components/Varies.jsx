@@ -17,12 +17,13 @@ function Varies() {
   useEffect(() => {
     getDocments("cardList");
   }, [cardList]);
+
   return (
     <div className="subject_wrap">
       {categoryItems &&
         categoryItems.map((doc) => (
           <NavLink to={`cardList/${doc.id}`} key={doc.id}>
-            <CardList title={doc.data()} explan={doc.data()} />
+            <CardList data={doc.data()} />
           </NavLink>
         ))}
     </div>

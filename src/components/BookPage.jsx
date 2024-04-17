@@ -1,11 +1,16 @@
-function BookPage() {
+function BookPage({ data }) {
+  
+  const stringName = JSON.stringify(data.name);
+  const stringDetail = JSON.stringify(data.name);
+  const stringTime = JSON.stringify(data.time);
+
   return (
     <div className="content">
       <div>
-        <p className="name">홍길동</p>
-        <p className="text">안녕하세요.</p>
+        <p className="name">{stringName}</p>
+        <p className="text">{stringDetail }</p>
       </div>
-      <p className="day">24.03.15</p>
+      <p className="day">{stringTime }</p>
     </div>
   );
 }
