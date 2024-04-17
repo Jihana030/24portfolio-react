@@ -32,13 +32,14 @@ function CardList({ title, explan }) {
   // useEffect(() => {
   //   getDocments(cardList);
   // }, [cardList]);
-  console.log(explan)
+  console.log(title)
+  const stringTitle = JSON.stringify(title.title);
   const stringExplan = JSON.stringify(explan.explan);
   return (
     <div className="card_wrap">
       <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
         <div className="card">
-          <p className="card_title">{title}</p>
+          <p className="card_title">{stringTitle}</p>
           <img src={cardImg} alt="카테고리카드" />
         </div>
         <div className={className}>
