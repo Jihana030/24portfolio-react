@@ -12,18 +12,16 @@ function CardList({ data }) {
   };
   const className = `card_explan ${isHover ? "dis-none" : ""}`;
 
-  const stringTitle = JSON.stringify(data.title);
-  const stringExplan = JSON.stringify(data.explan);
   return (
     <div className="card_wrap">
       <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
         <div className="card">
-          <p className="card_title">{stringTitle}</p>
+          <p className="card_title">{data.title}</p>
           <img src={cardImg} alt="카테고리카드" />
         </div>
         <div className={className}>
           <ul>
-            <li>{stringExplan}</li>
+            <li>{data.explan}</li>
           </ul>
         </div>
       </div>
