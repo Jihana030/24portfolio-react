@@ -1,15 +1,21 @@
-import { Timestamp, collection } from "firebase/firestore";
+import { Timestamp, addDoc, collection, doc, onSnapshot, orderBy } from "firebase/firestore";
 import { db } from "../firebase";
+import { useEffect, useState } from "react";
 
 function GuestBookWrite() {
+  const [submit, setSubmit] = useState('');
+  const [title, setTitle] = useState('제목');
+  const [userName, setUserName] = useState('이름');
+  const [detail, setDetail] = useState('내용');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const ref = collection(db, "guest");
     await addDoc(ref, {
       title: title,
-      userName: userName,
+      name: userName,
       detail: detail,
-      createdAt: Timestamp.fromDate(new Date()),
+      time: Timestamp.fromDate(new Date()),
     });
   };
 
@@ -22,15 +28,15 @@ function GuestBookWrite() {
         <form id="leave-message">
           <div>
             <label htmlFor="title">제목</label>
-            <input id="title" type="text" autofocus />
+            <input id="title" type="text" value={title} autofocus />
           </div>
           <div>
             <label htmlFor="name">이름</label>
-            <input id="name" type="text" />
+            <input id="name" type="text" value={userName}/>
           </div>
           <div>
             <label htmlFor="detail">내용</label>
-            <textarea name="detail" id="detail"></textarea>
+            <textarea name="detail" id="detail" value={detail}></textarea>
           </div>
           <div className="write_btn">
             <button type="reset">다시쓰기</button>

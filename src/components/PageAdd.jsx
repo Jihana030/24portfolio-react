@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 function PageAdd() {
   return (
-    <a href="./guestBook_write.html" className="add_btn">
+    <Link to={`guestBookWrite`} className="add_btn">
       <span className="add material-symbols-rounded"> add </span>
-    </a>
+    </Link>
   );
 }
 

@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Varies from "./components/Varies";
 import React from 'react';
 import GuestBook from './components/GuestBook';
+import GuestBookWrite from './components/GuestBookWrite';
 
 function Main() {
   const CardList = React.lazy(() => import("./components/CardList"));
@@ -16,6 +17,7 @@ function Main() {
           <Route path="/varies/:id" element={<CardList />} />
           <Route path="/varies/cardList/luckydraw" element={<MainDetail />} />
           <Route path="/varies/cardList/guestBook" element={<GuestBook />} />
+          <Route path="/varies/cardList/guestBook/guestBookWrite" element={<GuestBookWrite />} />
         </Routes>
       </App>
     </BrowserRouter>
