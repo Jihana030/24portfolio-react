@@ -26,9 +26,9 @@ function GuestBook() {
       <Title title="방명록" />
       <div className="contents_wrap">
         {categoryItems &&
-          categoryItems.map((doc) => {
-            <BookPage key={doc.id} data={ doc.data()} />;
-          })}
+          categoryItems.map((doc) => (
+              <BookPage key={doc.id} data={doc.data()} />
+          ))}
       </div>
     </div>
   );

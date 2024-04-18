@@ -130,6 +130,7 @@
 
 #guestBook_wrap .contents_wrap .content .day {
   font-size: 13px;
+  align-self: flex-end;
 }
 
 /* 방명록 쓰기 */
