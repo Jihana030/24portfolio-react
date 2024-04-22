@@ -596,7 +596,7 @@ auth를 썼으면 쉽게 해결되겠지만, 나는 인증절차없이 오직 �
 오 read, write만 기능을 줄 수 있었다. 해결~
 
 state에 input의 value가 담기는 건 되었다. 이제 submit 했을 때 저장이 되면 되는데..
-
+https://mhhj.tistory.com/53
 
 
 
