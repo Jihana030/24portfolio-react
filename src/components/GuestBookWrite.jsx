@@ -1,4 +1,4 @@
-import { Timestamp, addDoc, collection, doc, onSnapshot, orderBy } from "firebase/firestore";
+import { Timestamp, addDoc, collection, doc, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "../firebase";
 import { useEffect, useState } from "react";
 
@@ -27,6 +27,11 @@ function GuestBookWrite() {
       time: Timestamp.fromDate(new Date()),
     });
   };
+
+  useEffect(() => {
+    const query = query(collection(db, 'guest'), orderBy('createdAt', 'desc'));
+  });
+  
 
   return (
     <div id="guestBook_wrap">
