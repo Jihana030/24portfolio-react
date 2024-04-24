@@ -120,7 +120,6 @@
   height: 125px;
   width: 384px;
   border-radius: 10px;
-  cursor: pointer;
 }
 
 #guestBook_wrap .contents_wrap .content .name {
@@ -155,9 +154,9 @@
   align-items: flex-start;
 }
 #guestBook_wrap .form_wrap form div label {
-  border-right: 1px solid var(--main-white);
   padding: 10px;
 }
+
 #guestBook_wrap .form_wrap form div:nth-child(3) label {
   height: 200px;
 }
@@ -173,7 +172,8 @@
   padding: 4px;
   color: var(--main-white);
   font-size: 18px;
-  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 1px solid var(--main-white);
 }
 #guestBook_wrap .form_wrap form div textarea {
   height: 200px;
