@@ -1,4 +1,4 @@
-import { collection, getDocs, query } from "firebase/firestore";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "../firebase";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -11,7 +11,7 @@ function GuestBook() {
   const [categoryItems, setCategoryItems] = useState();
 
   async function getDocments(guest) {
-    const categoryRef = query(collection(db, guest));
+    const categoryRef = query(collection(db, guest), orderBy('time','desc'));
     const queryCategory = await getDocs(categoryRef);
     setCategoryItems(queryCategory.docs);
   }

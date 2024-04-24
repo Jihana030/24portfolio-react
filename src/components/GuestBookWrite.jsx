@@ -1,15 +1,12 @@
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase";
 import { useState } from "react";
+import { Link} from "react-router-dom";
 
 function GuestBookWrite() {
-  const [title, setTitle] = useState('');
   const [userName, setUserName] = useState('');
   const [detail, setDetail] = useState('');
 
-  const changeTitle = (e) => {
-    setTitle(e.target.value);
-  }
   const changeName = (e) => {
     setUserName(e.target.value);
   }
@@ -34,16 +31,6 @@ function GuestBookWrite() {
       <div id="guestbook-container" className="form_wrap">
         <form id="leave-message" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="title">제목</label>
-            <input
-              id="title"
-              type="text"
-              value={title}
-              onChange={changeTitle}
-              autoFocus
-            />
-          </div>
-          <div>
             <label htmlFor="name">이름</label>
             <input
               id="name"
@@ -64,7 +51,7 @@ function GuestBookWrite() {
           <div className="write_btn">
             <button type="reset">다시쓰기</button>
             <button type="submit">
-              저장
+              <Link to={'/varies/cardList/guestBook'}>저장</Link>
             </button>
           </div>
         </form>
