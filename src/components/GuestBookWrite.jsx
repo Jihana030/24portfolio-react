@@ -1,6 +1,6 @@
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function GuestBookWrite() {
   const [title, setTitle] = useState('');
@@ -17,6 +17,7 @@ function GuestBookWrite() {
     setDetail(e.target.value);
   }
   const handleSubmit = async (e) => {
+    e.preventDefault();
     const ref = collection(db, "guest");
     await addDoc(ref, {
       name: userName,
@@ -25,17 +26,13 @@ function GuestBookWrite() {
     });
   };
 
-  // useEffect(() => {
-  //   handleSubmit()
-  // }, [])
-
   return (
     <div id="guestBook_wrap">
       <div className="title">
         <h2>글쓰기</h2>
       </div>
       <div id="guestbook-container" className="form_wrap">
-        <form id="leave-message">
+        <form id="leave-message" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="title">제목</label>
             <input
@@ -66,7 +63,7 @@ function GuestBookWrite() {
           </div>
           <div className="write_btn">
             <button type="reset">다시쓰기</button>
-            <button type="submit" onClick={handleSubmit}>
+            <button type="submit">
               저장
             </button>
           </div>
