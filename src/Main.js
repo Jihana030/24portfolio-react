@@ -16,7 +16,7 @@ function Main() {
           <Route path="/" element={<MainDetail />} />
           <Route path="/varies" element={<Varies />} />
           <Route path="/varies/:id" element={<CardList />} />
-          <Route path="/varies/cardList/luckyDraw" element={<Luckydraw />} />
+          <Route path="/varies/cardList/luckydraw" element={<Luckydraw />} />
           <Route path="/varies/cardList/guestBook" element={<GuestBook />} />
           <Route path="/varies/cardList/guestBook/guestBookWrite" element={<GuestBookWrite />} />
         </Routes>

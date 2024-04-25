@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import drawImg from "../assets/img/luckydraw.png";
 import drawImgMove from "../assets/img/luckydraw2.gif";
 import SlideTxt from "./SlideTxt";
@@ -7,16 +7,23 @@ import Title from "./Title";
 
 function Luckydraw() {
   const [imgMove, setImgMove] = useState(false); //false면 멈춘이미지, move면 움직이는 이미지
-
+  const handleLucky = () => {
+    setImgMove(true);
+    console.log(true);
+  }
+  useEffect(() => {
+    const timer = setTimeout(() => {}, 8000);
+    return () => clearTimeout(timer);
+  });
   return (
     <div id="luckydraw_wrap">
       <Title title='운세뽑기'/>
-      <div class="lucky_wrap">
-        <div class="draw">
+      <div className="lucky_wrap">
+        <div className="draw">
           {imgMove ? (
-            <img class="draw_gif" src={drawImgMove} alt="운세뽑기" />
+            <img className="draw_gif" src={drawImgMove} alt="운세뽑기" />
           ) : (
-            <img class="draw_png" src={drawImg} alt="운세뽑기" />
+            <img className="draw_png" src={drawImg} alt="운세뽑기" onClick={handleLucky}/>
           )}
         </div>
         {imgMove && <RandomNum />}

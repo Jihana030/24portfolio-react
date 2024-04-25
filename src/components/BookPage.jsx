@@ -1,6 +1,7 @@
 
 function BookPage({ data }) {
   
+  // time 원하는대로 보이기
   const stringTime = data.time;
   const day = stringTime.toDate();
   let year = day.getFullYear();
