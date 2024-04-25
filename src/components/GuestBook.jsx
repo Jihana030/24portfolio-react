@@ -10,6 +10,7 @@ function GuestBook() {
   const { guest } = useParams();
   const [categoryItems, setCategoryItems] = useState();
 
+  // 방명록 내림차순 정렬, 데이터 불러오기
   async function getDocments(guest) {
     const categoryRef = query(collection(db, guest), orderBy('time','desc'));
     const queryCategory = await getDocs(categoryRef);
