@@ -738,9 +738,14 @@ innerHTML이 스트립팅공격에 쉽게 노출된다고한다. 그럼 다른 �
 주석처리를 해가며 확인해 본 결과,
 setNum(parseInt(Math.random() * 10));
 setTxt(txtArr[0]);
-가 없어야 무한루프하지 않는다.
-그리고 setTxt는 왜 txt에 아무것도 담지 못할까.
-정말 총체적 난국이다.
+const random = parseInt(Math.random() * (txtArr.length - 1) + 1);
+setTxt(txtArr[random]);
+가 없어야 무한루프돈다.
+글자를 바꾸는 함수가 문제인모양이다. 아니 배열에서 꺼내쓰는데 무한루프 돌 일인거냐고..
+
+아. 무한 리랜더링. 값이 바뀌어서 계속 리랜더링하는거라고 한다. 납득이 간다. 맞아. 인강에서 그런 내용을 들었던 것 같다.
+
+허억 감격. 됐다! 됐다아!!
 
 
 
