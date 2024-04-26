@@ -4,16 +4,16 @@ function RandomNum({ time }) {
   const [num, setNum] = useState(3);
   const [txt, setTxt] = useState("");
 
+  const txtArr = [
+    "오늘은 아무것도 하지 마세요!",
+    `오늘은 젤리를 ${num}개 먹어보면 어떨까요?`,
+    `오늘은 빵을 ${num}개 사보면 어떨까요?`,
+    `오늘은 사탕을 ${num}개 사보면 어떨까요?`,
+    `오늘은 선물을 ${num}개 해보면 어떨까요?`,
+    `오늘은 사람을 ${num}명 만나보면 어떨까요?`,
+  ];
   
   useEffect(() => {
-    const txtArr = [
-      "오늘은 아무것도 하지 마세요!",
-      `오늘은 젤리를 ${num}개 먹어보면 어떨까요?`,
-      `오늘은 빵을 ${num}개 사보면 어떨까요?`,
-      `오늘은 사탕을 ${num}개 사보면 어떨까요?`,
-      `오늘은 선물을 ${num}개 해보면 어떨까요?`,
-      `오늘은 사람을 ${num}명 만나보면 어떨까요?`,
-    ];
     
     setNum(parseInt(Math.random() * 10));
     if (num === 0) {
@@ -23,7 +23,7 @@ function RandomNum({ time }) {
       setTxt(() => txtArr[random]);
     }
     
-  },[num, txt])
+  },[num, txt, txtArr])
 
   return (
     <div className="txt_wrap">
