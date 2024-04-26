@@ -747,6 +747,13 @@ setTxt(txtArr[random]);
 
 허억 감격. 됐다! 됐다아!!
 
+핫.. 완전히 해결된건 아니었다. 콘솔에 에러가 뜨고 있다. 
+Maximum update depth exceeded. This can happen when a component calls setState inside useEffect
+힝.. txtArr로 넣어둔게 문제가 되는 것 같다. 왜인지까진 아직 이해못했다. 콜백을 쓰라고 하는 것 같다. 
+useEffect 안에서 setState함수가 실행되면 무한루프가 발생할 수 있다고한다. 
+의존성이 변경될때만 실행되도록 조정해야한다고 한다.
+useEffect 더 공부해야겠다. 아니 모든걸 다 더 알아야만한다.ㅜㅜ. 배워가며 만드는 포폴인거지 원래.
+
 
 
 
