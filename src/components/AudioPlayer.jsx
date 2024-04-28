@@ -1,3 +1,4 @@
+import React from "react";
 import audioUrl from "../assets/img/sampleAudio.mp3";
 
 function AudioPlayer() {

@@ -1,3 +1,4 @@
+import React from "react";
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase";
 import { useState } from "react";

@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import cardImg from "../assets/img/menucard06.png";
 

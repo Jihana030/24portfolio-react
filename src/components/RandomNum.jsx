@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 
 function RandomNum({ time }) {
@@ -13,8 +14,7 @@ function RandomNum({ time }) {
     `오늘은 사람을 ${num}명 만나보면 어떨까요?`,
   ];
   
-  useEffect(() => {
-    
+  const luckyTxt = ()=>{
     setNum(parseInt(Math.random() * 10));
     if (num === 0) {
       setTxt(()=>txtArr[0]);
@@ -22,7 +22,9 @@ function RandomNum({ time }) {
       const random = parseInt(Math.random() * (txtArr.length - 1) + 1);
       setTxt(() => txtArr[random]);
     }
-    
+  }
+
+  useEffect(() => {
   },[num, txt, txtArr])
 
   return (

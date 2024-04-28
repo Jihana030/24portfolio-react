@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import drawImg from "../assets/img/luckydraw.png";
 import drawImgMove from "../assets/img/luckydraw2.gif";
