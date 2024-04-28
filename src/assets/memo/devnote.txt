@@ -809,6 +809,10 @@ https://codingapple.com/unit/react-build-deploy-github-pages/
 여러 정보를 검토한 결과 txt를 바꾸는 함수를 luckydarw에 넣어줘야 한다는 결론에 도달해 옮겨주었다. 
 그랬더니 math.random이 제대로 작동하지 않기 시작했다. 
 
+왜 num이 undefined일까?
+초기값이 들어가고 set값이 들어가지 못했다. randomnum에 있을때는 되었는데.. 흠.
+음. txtArr에 num 초기값이 담기고, setNum으로 바뀐값은 arr에 들어가지 않는다. 그렇기에 랜덤함수가 아무리 동작해도 txt에는 바뀐 num 값이 담기지 않는다.
+그럼 어떻게 arr에 새로운 num값을 넣을것인가?
 
 
 

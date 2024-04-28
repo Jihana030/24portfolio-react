@@ -9,7 +9,7 @@ import Title from "./Title";
 function Luckydraw() {
   const [imgMove, setImgMove] = useState(false); //false면 멈춘이미지, move면 움직이는 이미지
   const [randomTxt, setRandomTxt] = useState(false);
-  const [num, setNum] = useState(0);
+  const [num, setNum] = useState();
   const [txt, setTxt] = useState("");
 
   const txtArr = [
@@ -22,14 +22,12 @@ function Luckydraw() {
   ];
   
   const luckyTxt = ()=>{
-    setNum(parseInt(Math.random() * 10));
-    console.log(`num: ${num}`);
     setRandomTxt(true);
+    setNum(parseInt(Math.random() * 10));
     if (num === 0) {
       setTxt(txtArr[0]);
     } else {
       const random = parseInt(Math.random() * (txtArr.length - 1) + 1);
-      console.log(`txtarr : ${txtArr}`);
       setTxt(txtArr[random]);
     }
   }
