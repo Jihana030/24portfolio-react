@@ -1,4 +1,4 @@
-
+import React from "react";
 function BookPage({ data }) {
   
   // time 원하는대로 보이기

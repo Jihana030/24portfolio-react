@@ -1,3 +1,4 @@
+import React from "react";
 function SlideTxt() {
   return (
     <div className="txt_slide_wrap">

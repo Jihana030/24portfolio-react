@@ -1,3 +1,4 @@
+import React from "react";
 import profileImg from "../assets/img/profile_replace.jpg";
 import AudioPlayer from "./AudioPlayer";
 import Player from "./Player";

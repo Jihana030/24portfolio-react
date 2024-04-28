@@ -1,3 +1,4 @@
+import React from "react";
 import playImg from "../assets/img/start.png";
 import useAudio from './hooks/useAudio.jsx';
 
