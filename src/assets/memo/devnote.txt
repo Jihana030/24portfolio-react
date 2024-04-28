@@ -786,9 +786,29 @@ useEffect 더 공부해야겠다. 아니 모든걸 다 더 알아야만한다.�
 - vercel
 - aws
 https://wikidocs.net/197777
+https://codingapple.com/unit/react-build-deploy-github-pages/
 9. 리드미 작성하기
 
 useEffect 안에 setState가 사용되는게 문제라면 함수로 빼보면 어떨까.
+
+음. 집에서 너무 오랜만에 작업을 한 모양이다... 뭔가 에러가 나고있다.
+처음엔 firebase에러였는데 이젠 node가 에러를 뱉고있다. 왜 그러는데..ㅜㅜ
+node버전이 회사랑 다른가..? 그게 왜 이제 에러가 나는 것이며 아까는 왜 firebase에러였어!
+
+nvm을 깔라그래서 깔았더니 git이 안 깔려있대서 git 다시 깔고, nvm 실행하니까 node가 있대서 지우고 다시 까니까 버전 선택이 가능했고 16으로 설치했다. 회사가 정확히 몇인지는 모른다만.
+집이 20으로 깔려있던게 일단 문제가 아닐까.
+그래서 nvm은 필요없어져서 지웠다. 그랬더니 이젠 import React 안해놔서 JSX가 scope안된다고 대부분의 파일에 임포트를 추가했다...
+이게 뭐지.. 왜 이런과정이 생긴걸까. 진짜 너무 궁금하다. 왜??
+
+암튼 다시 회사에서의 상황과 동일하게 되었다.
+
+.. react build를 하라구..?
+뭔가 의도치않게 빌드 폴더가 생성되었는데 추후 배포 할 때 다시 빌드 후 레파지토리를 만들어서 넣도록 하겠다.
+https://codingapple.com/unit/react-build-deploy-github-pages/
+
+여러 정보를 검토한 결과 txt를 바꾸는 함수를 luckydarw에 넣어줘야 한다는 결론에 도달해 옮겨주었다. 
+그랬더니 math.random이 제대로 작동하지 않기 시작했다. 
+
 
 
 
