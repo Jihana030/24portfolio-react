@@ -4,8 +4,6 @@ function SlideTxt() {
   const onStop = () => setAnimate(false);
   const onRun = () => setAnimate(true);
 
-
-
   return (
     <div className="txt_slide_wrap">
       <div className="roller">
