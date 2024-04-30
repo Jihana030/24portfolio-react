@@ -8,22 +8,19 @@ import Title from "./Title";
 
 function Luckydraw() {
   const [imgMove, setImgMove] = useState(false); //false면 멈춘이미지, move면 움직이는 이미지
-  const [randomTxt, setRandomTxt] = useState(false);
-  const [num, setNum] = useState();
+  const [randomTxt, setRandomTxt] = useState(false); //setTimeout 후 텍스트 나오도록
+  const [num] = useState(parseInt(Math.random() * 10));
   const [txt, setTxt] = useState("");
-
-  const txtArr = [
-    "오늘은 아무것도 하지 마세요!",
-    `오늘은 젤리를 ${num}개 먹어보면 어떨까요?`,
-    `오늘은 빵을 ${num}개 사보면 어떨까요?`,
-    `오늘은 사탕을 ${num}개 사보면 어떨까요?`,
-    `오늘은 선물을 ${num}개 해보면 어떨까요?`,
-    `오늘은 사람을 ${num}명 만나보면 어떨까요?`,
-  ];
-  
   const luckyTxt = ()=>{
+    const txtArr = [
+      "오늘은 아무것도 하지 마세요!",
+      `오늘은 젤리를 ${num}개 먹어보면 어떨까요?`,
+      `오늘은 빵을 ${num}개 사보면 어떨까요?`,
+      `오늘은 사탕을 ${num}개 사보면 어떨까요?`,
+      `오늘은 선물을 ${num}개 해보면 어떨까요?`,
+      `오늘은 사람을 ${num}명 만나보면 어떨까요?`,
+    ];
     setRandomTxt(true);
-    setNum(parseInt(Math.random() * 10));
     if (num === 0) {
       setTxt(txtArr[0]);
     } else {
@@ -34,9 +31,10 @@ function Luckydraw() {
 
   const handleLucky = () => {
     setImgMove(true);
-    const timer = setTimeout(() => {luckyTxt()}, 1000);
+    const timer = setTimeout(() => {luckyTxt()}, 8000);
     return () => clearTimeout(timer);
   }
+
   return (
     <div id="luckydraw_wrap">
       <Title title='운세뽑기'/>
