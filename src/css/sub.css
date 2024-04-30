@@ -291,7 +291,73 @@
   flex-flow: row nowrap;
   align-items: center;
 }
-.roller > ul > li {
+.roller > ul > div {
   padding-right: 30px;
   white-space: nowrap;
 }
+.roller > ul .slide {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.roller > ul .slide::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.roller > ul .slide li {
+  cursor: pointer;
+  z-index: 2;
+  transition: 0.3s;
+  margin-right: 20px;
+}
+.roller > ul .slide li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.roller > ul .original {
+  animation: 12s linear infinite infiniteAnimation1;
+}
+.roller > ul .clone {
+  animation: 12s linear infinite infiniteAnimation2;
+}
+.roller > ul .stop {
+  animation-play-state: paused;
+}
+@keyframes infiniteAnimation1 {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  50.1% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes infiniteAnimation2 {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
