@@ -6,6 +6,7 @@ import React from 'react';
 import GuestBook from './components/GuestBook';
 import GuestBookWrite from './components/GuestBookWrite';
 import Luckydraw from './components/Luckydraw';
+import Making from './components/Making';
 
 function Main() {
   const CardList = React.lazy(() => import("./components/CardList"));
@@ -17,6 +18,7 @@ function Main() {
           <Route path="/varies" element={<Varies />} />
           <Route path="/varies/:id" element={<CardList />} />
           <Route path="/varies/cardList/luckydraw" element={<Luckydraw />} />
+          <Route path="/varies/cardList/making" element={<Making />} />
           <Route path="/varies/cardList/guestBook" element={<GuestBook />} />
           <Route path="/varies/cardList/guestBook/guestBookWrite" element={<GuestBookWrite />} />
         </Routes>
