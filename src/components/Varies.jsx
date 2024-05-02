@@ -23,7 +23,7 @@ function Varies() {
     <div className="subject_wrap">
       {categoryItems &&
         categoryItems.map((doc) => (
-          <NavLink to={`cardList/${doc.id}`} key={doc.id}>
+          <NavLink to={`${doc.id}`} key={doc.id}>
             <CardList data={doc.data()} />
           </NavLink>
         ))}
