@@ -2,7 +2,7 @@ import React from "react";
 import Title from "./Title";
 import harryMain from '../assets/img/profile_replace.jpg'
 
-function Harryportter() {
+function Harrypotter() {
   return (
     <div id="harry_wrap">
       <Title title={"학원 마지막 프로젝트 : 호그와트 홈페이지"} />
@@ -25,4 +25,4 @@ function Harryportter() {
   );
 }
 
-export default Harryportter;
+export default Harrypotter;
