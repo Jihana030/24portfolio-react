@@ -16,7 +16,7 @@ export default function Layout() {
       <nav className="nav_wrap">
         <ul>
           <li>
-            <Link>이력서</Link>
+            <Link to="/curriculum">프로필</Link>
           </li>
           <li>
             <a href={github}>깃허브</a>

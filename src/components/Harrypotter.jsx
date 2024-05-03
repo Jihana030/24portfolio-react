@@ -56,7 +56,7 @@ css 애니메이션을 이용해 문이 열리는 느낌을 주었고, 애니메
             }
           />
         </div>
-        <p>&#91; 작업한 페이지 &#93;</p>
+        <p>&#91; 담당한 페이지 &#93;</p>
         <div className="harry_detail">
           <PageImage src={harryIntro} alt={"호그와트 도입"} />
           <PageDetail

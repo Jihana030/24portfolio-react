@@ -8,6 +8,7 @@ import GuestBookWrite from './components/GuestBookWrite';
 import Luckydraw from './components/Luckydraw';
 import Making from './components/Making';
 import Harrypotter from './components/Harrypotter';
+import Curriculum from './components/Curriculum';
 
 function Main() {
   const CardList = React.lazy(() => import("./components/CardList"));
@@ -23,6 +24,7 @@ function Main() {
           <Route path="/varies/harrypotter" element={<Harrypotter />} />
           <Route path="/varies/guestBook" element={<GuestBook />} />
           <Route path="/varies/guestBook/guestBookWrite" element={<GuestBookWrite />} />
+          <Route path='/curriculum' element={ <Curriculum/>} />
         </Routes>
       </App>
     </BrowserRouter>
