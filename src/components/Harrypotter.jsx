@@ -1,6 +1,9 @@
 import React from "react";
 import Title from "./Title";
-import harryMain from "../assets/img/profile_replace.jpg";
+import harryMain from "../assets/img/harry_main.png";
+import harryIntro from "../assets/img/harry_intro.png"
+import harryProfessor from "../assets/img/harry_professor.png"
+import harryHistory from "../assets/img/harry_history.png"
 
 function PageImage({ src, alt }) {
   return (
@@ -10,15 +13,15 @@ function PageImage({ src, alt }) {
   );
 }
 
-function PageDetail({ title, detail }) {
+function PageDetail({ title, detail, href }) {
   return (
     <div className="detail_wrap">
       <div className="title">
         <h3>{title}</h3>
-        <p className="arrow_wrap">
+        <a href={href} className="arrow_wrap">
           보러가기
           <span class="material-symbols-outlined">arrow_forward</span>
-        </p>
+        </a>
       </div>
       <div className="detail">
         <pre>{detail}</pre>
@@ -45,20 +48,42 @@ css 애니메이션을 이용해 문이 열리는 느낌을 주었고, 애니메
       <div className="harry_detail_wrap">
         <div className="harry_detail">
           <PageImage src={harryMain} alt={"호그와트 메인"} />
-          <PageDetail title={"호그와트 홈페이지"} detail={mainConcept} />
+          <PageDetail
+            title={"호그와트 홈페이지"}
+            detail={mainConcept}
+            href={
+              "https://jihana030.github.io/Hogwarts_School/views/index.html"
+            }
+          />
         </div>
         <p>&#91; 작업한 페이지 &#93;</p>
         <div className="harry_detail">
-          <PageImage src={harryMain} alt={"호그와트 도입"} />
-          <PageDetail title={"호그와트 도입"} detail={subConcept00} />
+          <PageImage src={harryIntro} alt={"호그와트 도입"} />
+          <PageDetail
+            title={"호그와트 도입"}
+            detail={subConcept00}
+            href={"https://jihana030.github.io/Hogwarts_School/"}
+          />
         </div>
         <div className="harry_detail">
-          <PageImage src={harryMain} alt={"호그와트 연혁"} />
-          <PageDetail title={"호그와트 연혁"} detail={subConcept01} />
+          <PageImage src={harryHistory} alt={"호그와트 연혁"} />
+          <PageDetail
+            title={"호그와트 연혁"}
+            detail={subConcept01}
+            href={
+              "https://jihana030.github.io/Hogwarts_School/views/history.html"
+            }
+          />
         </div>
         <div className="harry_detail">
-          <PageImage src={harryMain} alt={"호그와트 교수소개"} />
-          <PageDetail title={"호그와트 교수소개"} detail={subConcept02} />
+          <PageImage src={harryProfessor} alt={"호그와트 교수소개"} />
+          <PageDetail
+            title={"호그와트 교수소개"}
+            detail={subConcept02}
+            href={
+              "https://jihana030.github.io/Hogwarts_School/views/professor.html"
+            }
+          />
         </div>
       </div>
     </div>
