@@ -379,6 +379,7 @@
   height: 100%;
   background-color: #eee;
   margin-right: 10px;
+  align-self: center;
 }
 #harry_wrap .harry_detail .harry_img img {
   width: 100%;
