@@ -423,15 +423,17 @@
   font-size: 18px;
 }
 /* 이력서 */
-#curriculum_wrap {
+#curriculum_wrap .detail_wrap {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  padding: 20px;
 }
 #curriculum_wrap .profile_img {
-  width: 30%;
+  width: calc(30% - 10px);
   height: 100%;
+  padding-right: 10px;
 }
 #curriculum_wrap .profile_img img {
   width: 100%;
@@ -439,5 +441,54 @@
   object-fit: contain;
 }
 #curriculum_wrap .info_list {
-  width: 70%;
+  width: calc(70% - 10px);
+  padding-left: 10px;
+  margin-top: 10px;
+  border-left: 1px solid var(--main-white);
+}
+#curriculum_wrap .info_list > div:not(:last-child) {
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--main-white);
+}
+#curriculum_wrap .info_list ul {
+  font-size: 18px;
+  margin: 10px 0;
+}
+#curriculum_wrap .info_list ul li {
+  margin: 5px;
+}
+#curriculum_wrap .info_list h2 {
+  margin: 5px;
+}
+#curriculum_wrap .info_list .tool ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#curriculum_wrap .info_list .tool ul li {
+  background-color: var(--sub-back);
+  border-radius: 10px;
+  padding: 10px;
+}
+#curriculum_wrap .info_list .certificate ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+#curriculum_wrap .info_list .certificate ul li {
+  border-bottom: 1px solid var(--main-white);
+  padding-bottom: 5px;
+}
+#curriculum_wrap .info_list .study ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+#curriculum_wrap .info_list .study ul li {
+  border-bottom: 1px solid var(--main-white);
+  padding-bottom: 5px;
 }
