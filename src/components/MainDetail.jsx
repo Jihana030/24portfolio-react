@@ -1,5 +1,5 @@
 import React from "react";
-import profileImg from "../assets/img/profile_replace.jpg";
+import profileImg from "../assets/img/profile.jpg";
 import AudioPlayer from "./AudioPlayer";
 import Player from "./Player";
 import Subtitle from "./Subtitle";

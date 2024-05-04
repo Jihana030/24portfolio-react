@@ -89,6 +89,8 @@
   padding: 10px 30px;
   margin-bottom: 20px;
   width: 100%;
+  z-index: 9;
+  position: relative;
 }
 
 .title h2 {
@@ -491,4 +493,15 @@
 #curriculum_wrap .info_list .study ul li {
   border-bottom: 1px solid var(--main-white);
   padding-bottom: 5px;
+}
+/* 메이킹 */
+#making_wrap .making {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+#making_wrap .making img {
+  box-shadow: #0e0e0e 0px 0px 92px;
+  border-radius: 100px;
 }
