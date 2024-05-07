@@ -952,6 +952,15 @@ harrypotter 컴포넌트 제작. 무엇을 컴포넌트화 해야할지 고민�
 
 회사에서는 iframe이 생기지 않는다. 생기는 순간은 오직 에러가 날 때 뿐.
 
+리드미 자료
+
+https://velog.io/@gmlstjq123/Readme.md-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1%EB%B2%95
+
+https://hulrud.tistory.com/3
+
+https://yoon990.tistory.com/38
+
+https://blog.cowkite.com/blog/2102241544/
 
 
 
