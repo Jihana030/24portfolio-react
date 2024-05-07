@@ -1,5 +1,5 @@
 import React from "react";
-import Profile from "../assets/img/menucard04.png";
+import Profile from "../assets/img/profile.jpg";
 import Title from "./Title";
 
 function Curriculum() {
