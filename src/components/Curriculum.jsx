@@ -1,6 +1,7 @@
 import React from "react";
 import Profile from "../assets/img/profile.jpg";
 import Title from "./Title";
+import OlderTime from "./OlderTime";
 
 function Curriculum() {
   return (
@@ -12,7 +13,10 @@ function Curriculum() {
         </div>
         <div className="info_list">
           <div className="career">
-            <h2>경력</h2>
+            <h2>
+              경력
+              <OlderTime/>
+            </h2>
             <ul>
               <li className="name">스피드옥션</li>
               <li className="day">23.05.04 ~ </li>
