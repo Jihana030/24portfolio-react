@@ -985,6 +985,18 @@ https://blog.rhostem.com/posts/2022-01-08-canvas-web-audio-player?utm_source=gae
 의문이 들기 시작했다. 나는 무슨 생각으로 저렇게 나눠놓았을까..?
 음. 역시. 분리하지않으니 제대로 동작하게 되었다.
 
+프로필에 경력기술을 보니 총 경력 개월수를 넣고 싶어서 만들었다.
+생각보다 그냥 심플하게 만들었다. 뭔가 복잡하게 계산을 해야하나 했는데..
+일단 이후 경력이 생기면 복잡해질듯..
+
+종속성 에러가 떠서 인스톨 해줬다. 집에도 해줄 것.
+npm install --save-dev @babel/plugin-proposal-private-property-in-object --legacy-peer-deps
+
+..? 이거 집에서 뜬 에러랑 같은 거 같아..
+
+운세뽑기에서 이미지 클릭시 커졌다가 gif로 동작하는 부분이 있는데 왜 그런지 모르겠다.
+커지게 하는 코드가 있을리 없는데.
+css가 그때 사라지나..?
 
 
 
