@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useState } from "react";
 
 const useAudio = (url) => {
-  const [audio] = useState(new Audio(url));
+  const audioRef = useRef(new Audio(url));
+  const audio = audioRef.current;
   const [playing, setPlaying] = useState(false);
 
   // 토글이 playing의 false/true를 변경시켜주고
