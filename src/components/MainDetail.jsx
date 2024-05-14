@@ -7,7 +7,6 @@ function MainDetail(props) {
   const [checkData, setCheckData] = useState(false);
   const checkClick = (check) => {
     setCheckData(check);
-    console.log(`main:${checkData}`);
   }
   return (
     <section id="introduce">
