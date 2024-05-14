@@ -1038,7 +1038,8 @@ box-shadow에 transition을 걸면 성능이 저하된대서(걸리지 않기도
 이건 일단 어쩔 수 없는걸로.
 
 테마모드.
-
+https://jeongeum1202.tistory.com/281
+https://bluemiv.tistory.com/8
 
 
 
