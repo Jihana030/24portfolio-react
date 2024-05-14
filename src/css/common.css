@@ -64,6 +64,9 @@ header {
     justify-content: space-between;
     align-items: center;
     font-family: 'GmarketSansMedium';
+    background-color: #222;
+    position: relative;
+    z-index: 99;
 }
 
 header .nav_wrap ul {

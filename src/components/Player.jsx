@@ -1,10 +1,12 @@
 import React from "react";
 import playImg from "../assets/img/start.png";
 import useAudio from './hooks/useAudio.jsx';
+import audioUrl from "../assets/img/sampleAudio.mp3";
 
-const Player = ({ url: audioUrl }) => {
+const Player = (props) => {
   const [playing, toggle] = useAudio(audioUrl);
 
+  props.onCheck(playing);
   return (
     <div id="play_btn" className="start_img" onClick={toggle}>
       <img
