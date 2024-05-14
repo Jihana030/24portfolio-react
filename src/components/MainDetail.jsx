@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import profileImg from "../assets/img/profile.jpg";
 import Player from "./Player";
 import Subtitle from "./Subtitle";
 
-
-function MainDetail() {
-
+function MainDetail(props) {
+  const [checkData, setCheckData] = useState(false);
+  const checkClick = (check) => {
+    setCheckData(check);
+    console.log(`main:${checkData}`);
+  }
   return (
     <section id="introduce">
       <div className="audio_wrap">
-        <div id="prf_img" className="profile_img">
-          <img src={profileImg} alt="대체이미지" />
+        <div id="prf_img" className={"profile_img " + (checkData ? "shadow" : "")}>
+          <img src={profileImg} alt="프로필사진" />
         </div>
-        <Player/>
+        <Player onCheck={checkClick} />
       </div>
-      <Subtitle/>
+      <Subtitle />
     </section>
   );
 }

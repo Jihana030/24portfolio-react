@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { useState } from "react";
-import audioUrl from "../../assets/img/sampleAudio.mp3";
 
-const useAudio = (url) => {
+
+const useAudio = (audioUrl) => {
   const audioRef = useRef(new Audio(audioUrl));
   const audio = audioRef.current;
   const [playing, setPlaying] = useState(false);
