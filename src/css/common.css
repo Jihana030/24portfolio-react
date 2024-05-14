@@ -25,7 +25,7 @@ img {
     /*텍스트랑 이미지를 줄맞춤*/
 }
 
-body {
+.App {
     font-family: "ONE-Mobile-Title", "GmarketSansMedium";
     color: var(--main-white);
     font-size: 16px;
@@ -68,7 +68,35 @@ header {
     position: relative;
     z-index: 99;
 }
-
+header .logo_wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+header .logo_wrap .themWrap {
+    background-color: #474747;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 70px;
+    border-radius: 50px;
+    margin-left: 14px;
+}
+header .logo_wrap .themWrap span {
+    font-size: 20px;
+    background-color: #474747;
+    padding: 4px;
+    border-radius: 50px;
+    color: #a1a1a1;
+    cursor: pointer;
+}
+header .logo_wrap .themWrap span.choice {
+    color: #ffcc3e;
+    background-color: #808080;
+    box-shadow: 0 0 5px #ffcc3e;
+}
 header .nav_wrap ul {
     display: flex;
     flex-direction: row;

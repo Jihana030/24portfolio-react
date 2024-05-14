@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ThemeMode from "./ThemeMode";
 
 export default function Layout() {
   const github = "https://github.com/Jihana030";
@@ -12,6 +13,7 @@ export default function Layout() {
         <p>
           <Link to="/">logo</Link>
         </p>
+        <ThemeMode/>
       </div>
       <nav className="nav_wrap">
         <ul>
