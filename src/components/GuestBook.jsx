@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import BookPage from "./BookPage";
 import PageAdd from "./PageAdd";
 import Title from "./Title";
+import { useLightMode } from "./ModeContext";
 
 function GuestBook() {
   const { guest } = useParams();
@@ -21,16 +22,13 @@ function GuestBook() {
   useEffect(() => {
     getDocments("guest");
   }, [guest]);
-
+  const { isLightMode } = useLightMode();
   return (
-    <div id="guestBook_wrap">
+    <div id="guestBook_wrap" className={isLightMode ? "light" : "dark"}>
       <PageAdd />
       <Title title="방명록" />
       <div className="contents_wrap">
-        {categoryItems &&
-          categoryItems.map((doc) => (
-              <BookPage key={doc.id} data={doc.data()} />
-          ))}
+        {categoryItems && categoryItems.map((doc) => <BookPage key={doc.id} data={doc.data()} />)}
       </div>
     </div>
   );

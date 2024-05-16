@@ -4,6 +4,7 @@ import harryMain from "../assets/img/harry_main.png";
 import harryIntro from "../assets/img/harry_intro.png"
 import harryProfessor from "../assets/img/harry_professor.png"
 import harryHistory from "../assets/img/harry_history.png"
+import { useLightMode } from "./ModeContext";
 
 function PageImage({ src, alt }) {
   return (
@@ -20,7 +21,7 @@ function PageDetail({ title, detail, href }) {
         <h3>{title}</h3>
         <a href={href} className="arrow_wrap">
           보러가기
-          <span class="material-symbols-outlined">arrow_forward</span>
+          <span class="material-symbols-rounded">arrow_forward</span>
         </a>
       </div>
       <div className="detail">
@@ -42,8 +43,9 @@ function Harrypotter() {
 css 애니메이션을 이용해 문이 열리는 느낌을 주었고, 애니메이션이 끝나면 자연스럽게 홈페이지의 메인으로 이동할 수 있도록 코드를 짰습니다.
 키워드에 관한 힌트는 링크바를 참고하세요.`;
 
+  const { isLightMode } = useLightMode();
   return (
-    <div id="harry_wrap">
+    <div id="harry_wrap" className={isLightMode ? "light" : "dark"}>
       <Title title={"학원 마지막 프로젝트 : 호그와트 홈페이지"} />
       <div className="harry_detail_wrap">
         <div className="harry_detail">
@@ -51,9 +53,7 @@ css 애니메이션을 이용해 문이 열리는 느낌을 주었고, 애니메
           <PageDetail
             title={"호그와트 홈페이지"}
             detail={mainConcept}
-            href={
-              "https://jihana030.github.io/Hogwarts_School/views/index.html"
-            }
+            href={"https://jihana030.github.io/Hogwarts_School/views/index.html"}
           />
         </div>
         <p>&#91; 담당한 페이지 &#93;</p>
@@ -70,9 +70,7 @@ css 애니메이션을 이용해 문이 열리는 느낌을 주었고, 애니메
           <PageDetail
             title={"호그와트 연혁"}
             detail={subConcept01}
-            href={
-              "https://jihana030.github.io/Hogwarts_School/views/history.html"
-            }
+            href={"https://jihana030.github.io/Hogwarts_School/views/history.html"}
           />
         </div>
         <div className="harry_detail">
@@ -80,9 +78,7 @@ css 애니메이션을 이용해 문이 열리는 느낌을 주었고, 애니메
           <PageDetail
             title={"호그와트 교수소개"}
             detail={subConcept02}
-            href={
-              "https://jihana030.github.io/Hogwarts_School/views/professor.html"
-            }
+            href={"https://jihana030.github.io/Hogwarts_School/views/professor.html"}
           />
         </div>
       </div>

@@ -4,13 +4,16 @@ import "./css/sub.css";
 import "./css/common.css";
 import React from "react";
 import Layout from "./components/Layout.jsx";
+import { LightModeProvider } from "./components/ModeContext.jsx";
 
 function App({ children }) {
   return (
-    <div className="App">
-      <Layout />
-      <div>{children}</div>
-    </div>
+    <LightModeProvider>
+      <div className="App">
+        <Layout />
+        <div>{children}</div>
+      </div>
+    </LightModeProvider>
   );
 }
 

@@ -5,13 +5,14 @@ import drawImgMove from "../assets/img/luckydraw2.gif";
 import SlideTxt from "./SlideTxt";
 import RandomNum from "./RandomNum";
 import Title from "./Title";
+import { useLightMode } from "./ModeContext";
 
 function Luckydraw() {
   const [imgMove, setImgMove] = useState(false); //false면 멈춘이미지, move면 움직이는 이미지
   const [randomTxt, setRandomTxt] = useState(false); //setTimeout 후 텍스트 나오도록
   const [num] = useState(parseInt(Math.random() * 10));
   const [txt, setTxt] = useState("");
-  const luckyTxt = ()=>{
+  const luckyTxt = () => {
     const txtArr = [
       "오늘은 아무것도 하지 마세요!",
       `오늘은 젤리를 ${num}개 먹어보면 어떨까요?`,
@@ -27,26 +28,28 @@ function Luckydraw() {
       const random = parseInt(Math.random() * (txtArr.length - 1) + 1);
       setTxt(txtArr[random]);
     }
-  }
+  };
 
   const handleLucky = () => {
     setImgMove(true);
-    const timer = setTimeout(() => {luckyTxt()}, 8000);
+    const timer = setTimeout(() => {
+      luckyTxt();
+    }, 8000);
     return () => clearTimeout(timer);
-  }
-
+  };
+  const { isLightMode } = useLightMode();
   return (
-    <div id="luckydraw_wrap">
-      <Title title='운세뽑기'/>
+    <div id="luckydraw_wrap" className={isLightMode ? "light" : "dark"}>
+      <Title title="운세뽑기" />
       <div className="lucky_wrap">
         <div className="draw">
           {imgMove ? (
             <img className="draw_gif" src={drawImgMove} alt="운세뽑기" />
           ) : (
-            <img className="draw_png" src={drawImg} alt="운세뽑기" onClick={handleLucky}/>
+            <img className="draw_png" src={drawImg} alt="운세뽑기" onClick={handleLucky} />
           )}
         </div>
-        {imgMove && <RandomNum num={num} txt={txt} time ={randomTxt}/>}
+        {imgMove && <RandomNum num={num} txt={txt} time={randomTxt} />}
       </div>
       <SlideTxt />
     </div>

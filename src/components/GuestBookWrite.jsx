@@ -3,6 +3,7 @@ import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase";
 import { useState } from "react";
 import { Link} from "react-router-dom";
+import { useLightMode } from "./ModeContext";
 
 function GuestBookWrite() {
   const [userName, setUserName] = useState('');
@@ -24,8 +25,10 @@ function GuestBookWrite() {
     });
   };
 
+  const { isLightMode } = useLightMode();
+
   return (
-    <div id="guestBook_wrap">
+    <div id="guestBook_wrap" className={isLightMode ? "light" : "dark"}>
       <div className="title">
         <h2>글쓰기</h2>
       </div>
@@ -33,26 +36,16 @@ function GuestBookWrite() {
         <form id="leave-message" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name">이름</label>
-            <input
-              id="name"
-              type="text"
-              value={userName}
-              onChange={changeName}
-            />
+            <input id="name" type="text" value={userName} onChange={changeName} />
           </div>
           <div>
             <label htmlFor="detail">내용</label>
-            <textarea
-              name="detail"
-              id="detail"
-              value={detail}
-              onChange={changeDetail}
-            ></textarea>
+            <textarea name="detail" id="detail" value={detail} onChange={changeDetail}></textarea>
           </div>
           <div className="write_btn">
             <button type="reset">다시쓰기</button>
             <button type="submit">
-              <Link to={'/varies/cardList/guestBook'}>저장</Link>
+              <Link to={"/varies/cardList/guestBook"}>저장</Link>
             </button>
           </div>
         </form>
