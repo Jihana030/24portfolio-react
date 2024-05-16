@@ -2,10 +2,12 @@ import React from "react";
 import Profile from "../assets/img/profile.jpg";
 import Title from "./Title";
 import OlderTime from "./OlderTime";
+import { useLightMode } from "./ModeContext";
 
 function Curriculum() {
+  const { isLightMode } = useLightMode();
   return (
-    <div id="curriculum_wrap">
+    <div id="curriculum_wrap" className={isLightMode ? "light" : "dark"}>
       <Title title={"프로필"} />
       <div className="detail_wrap">
         <div className="profile_img">
@@ -15,7 +17,7 @@ function Curriculum() {
           <div className="career">
             <h2>
               경력
-              <OlderTime/>
+              <OlderTime />
             </h2>
             <ul>
               <li className="name">스피드옥션</li>
@@ -54,8 +56,9 @@ function Curriculum() {
               <li>코드잇 react 강의</li>
               <li>코드잇 js강의</li>
               <li>
-                그린컴퓨터아트학원<br/>(기업요구를 반영한 디지털 비즈니스
-                웹앱(UIUX)디자인 & 개발자 양성과정)
+                그린컴퓨터아트학원
+                <br />
+                (기업요구를 반영한 디지털 비즈니스 웹앱(UIUX)디자인 & 개발자 양성과정)
               </li>
             </ul>
           </div>

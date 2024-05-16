@@ -18,7 +18,9 @@ a {
     text-decoration: none;
     color: var(--main-white);
 }
-
+.light a {
+    color: var(--main-black);
+}
 img {
     border: 0;
     vertical-align: middle;
@@ -27,13 +29,14 @@ img {
 
 .App {
     font-family: "ONE-Mobile-Title", "GmarketSansMedium";
-    color: var(--main-white);
     font-size: 16px;
     line-height: 1;
     letter-spacing: 0;
     word-break: keep-all;
+    color: var(--main-white);
     background-color: var(--main-black);
     caret-color: var(--main-white);
+    height: 100vh;
 }
 
 /* 드래그 시 색 변화 */
@@ -57,16 +60,24 @@ img {
 
 /* header */
 header {
-    border-bottom: 1px solid var(--main-white);
     padding: 15px 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     font-family: 'GmarketSansMedium';
-    background-color: #222;
     position: relative;
     z-index: 99;
+}
+header.dark {
+    border-bottom: 1px solid var(--main-white);
+    background-color: var(--main-black);
+    color: var(--main-white);
+}
+header.light {
+    border-bottom: 1px solid var(--main-black);
+    background-color: var(--main-white);
+    color: var(--main-black);
 }
 header .logo_wrap {
     display: flex;
@@ -80,22 +91,36 @@ header .logo_wrap .themWrap {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 70px;
+    width: 60px;
     border-radius: 50px;
     margin-left: 14px;
+    position: relative;
 }
 header .logo_wrap .themWrap span {
     font-size: 20px;
-    background-color: #474747;
     padding: 4px;
-    border-radius: 50px;
     color: #a1a1a1;
     cursor: pointer;
+    z-index: 9;
+    user-select: none;
 }
 header .logo_wrap .themWrap span.choice {
     color: #ffcc3e;
+}
+header .logo_wrap .themWrap .choiceRound {
     background-color: #808080;
     box-shadow: 0 0 5px #ffcc3e;
+    width: 28px;
+    height: 24px;
+    border-radius: 50px;
+    position: absolute;
+    transition: all 0.5s;
+}
+header .logo_wrap .themWrap .choiceRound.left {
+    left: 0;
+}
+header .logo_wrap .themWrap .choiceRound.right {
+    right: 0;
 }
 header .nav_wrap ul {
     display: flex;

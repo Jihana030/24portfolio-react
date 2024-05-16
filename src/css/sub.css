@@ -3,9 +3,17 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   width: 100%;
+  background-color: var(--main-black);
+}
+.subject_wrap.light {
+  background-color: var(--main-white);
+  height: calc(100vh - 60px);
+}
+.subject_wrap.light a {
+  color: var(--main-white);
 }
 .subject_wrap .card_wrap {
   margin: 10px;
@@ -68,6 +76,11 @@
 }
 
 /* 방명록 */
+#guestBook_wrap.light {
+  background-color: var(--main-white);
+  color: var(--main-black);
+  height: calc(100vh - 60px);
+}
 #guestBook_wrap .add_btn {
   position: absolute;
   right: 40px;
@@ -79,7 +92,9 @@
   z-index: 99;
   box-shadow: 0px 0px 10px var(--main-black);
 }
-
+#guestBook_wrap.light .add_btn{
+  color: var(--main-white);
+}
 #guestBook_wrap .add_btn .add {
   font-size: 2.5em;
 }
@@ -92,7 +107,9 @@
   z-index: 9;
   position: relative;
 }
-
+.light .title {
+  color: var(--main-white);
+}
 .title h2 {
   font-size: 24px;
 }
@@ -124,7 +141,9 @@
   width: 384px;
   border-radius: 10px;
 }
-
+#guestBook_wrap.light .contents_wrap .content {
+  color: var(--main-white);
+}
 #guestBook_wrap .contents_wrap .content .name {
   margin-bottom: 10px;
   font-weight: 600;
@@ -159,7 +178,9 @@
 #guestBook_wrap .form_wrap form div label {
   padding: 10px;
 }
-
+#guestBook_wrap.light .form_wrap form div label {
+  color: var(--main-white);
+}
 #guestBook_wrap .form_wrap form div:nth-child(3) label {
   height: 200px;
 }
@@ -201,15 +222,22 @@
   font-family: "ONE-Mobile-Title";
   cursor: pointer;
 }
-
+#guestBook_wrap.light .form_wrap .write_btn button a {
+  color: var(--main-white);
+}
 /* 운세뽑기 */
 #luckydraw_wrap {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  overflow-x: hidden;
 }
-
+#luckydraw_wrap.light {
+  background-color: var(--main-white);
+  color: var(--main-black);
+  height: calc(100vh - 60px);
+}
 #luckydraw_wrap .lucky_wrap {
   display: flex;
   flex-direction: row;
@@ -251,7 +279,10 @@
   overflow: hidden;
   letter-spacing: -0.075em;
 }
-
+#luckydraw_wrap.light .txt_slide_wrap {
+  background-color: var(--main-black);
+  color: var(--main-white);
+}
 #luckydraw_wrap .txt_slide_wrap::before {
   content: "";
   position: absolute;
@@ -260,12 +291,7 @@
   width: 20px;
   height: 100%;
   z-index: 1;
-  background: linear-gradient(
-    to right,
-    #222222 0%,
-    #22222275 51%,
-    rgba(170, 0, 0, 0) 100%
-  );
+  background: linear-gradient(to right, #222222 0%, #22222275 51%, rgba(170, 0, 0, 0) 100%);
 }
 
 #luckydraw_wrap .txt_slide_wrap::after {
@@ -276,12 +302,7 @@
   width: 20px;
   height: 100%;
   z-index: 1;
-  background: linear-gradient(
-    to right,
-    rgba(170, 0, 0, 0) 0%,
-    #22222275 51%,
-    #222222 100%
-  );
+  background: linear-gradient(to right, rgba(170, 0, 0, 0) 0%, #22222275 51%, #222222 100%);
 }
 #luckydraw_wrap .txt_slide_wrap .roller {
   position: absolute;
@@ -365,6 +386,10 @@
 }
 
 /* 해리포터 */
+#harry_wrap.light {
+  background-color: var(--main-white);
+  color: var(--main-black);
+}
 #harry_wrap .harry_detail_wrap {
   padding: 20px;
 }
@@ -400,7 +425,7 @@
   width: calc(70% - 10px);
 }
 #harry_wrap .harry_detail .detail_wrap .title {
-  background-color: #222222;
+  background-color: var(--main-black);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -408,6 +433,10 @@
   padding: 0;
   margin-top: 10px;
   font-family: "GmarketSansMedium";
+}
+#harry_wrap.light .harry_detail .detail_wrap .title {
+  background-color: var(--main-white);
+  color: var(--main-black);
 }
 #harry_wrap .harry_detail .detail_wrap .arrow_wrap {
   display: flex;
@@ -422,12 +451,20 @@
   border-radius: 20px;
   padding: 2px;
 }
+#harry_wrap.light .harry_detail .detail_wrap .arrow_wrap span {
+  color: var(--main-white);
+}
 #harry_wrap .harry_detail .detail_wrap .detail pre {
   font-family: "GmarketSansMedium";
   white-space: pre-wrap;
   font-size: 18px;
 }
 /* 이력서 */
+#curriculum_wrap.light {
+  color: var(--main-black);
+  background-color: var(--main-white);
+  height: calc(100vh - 60px);
+}
 #curriculum_wrap .detail_wrap {
   display: flex;
   flex-direction: row;
@@ -451,9 +488,15 @@
   margin-top: 10px;
   border-left: 1px solid var(--main-white);
 }
+#curriculum_wrap.light .info_list {
+  border-left: 1px solid var(--main-black);
+}
 #curriculum_wrap .info_list > div:not(:last-child) {
   margin-bottom: 20px;
   border-bottom: 1px solid var(--main-white);
+}
+#curriculum_wrap.light .info_list > div:not(:last-child) {
+  border-bottom: 1px solid var(--main-black);
 }
 #curriculum_wrap .info_list ul {
   font-size: 18px;
@@ -468,6 +511,9 @@
 #curriculum_wrap .info_list .career ul:not(:last-child) {
   border-bottom: 1px dashed var(--main-white);
 }
+#curriculum_wrap.light .info_list .career ul:not(:last-child) {
+  border-bottom: 1px dashed var(--main-black);
+}
 #curriculum_wrap .info_list .tool ul {
   display: flex;
   flex-direction: row;
@@ -481,7 +527,9 @@
   padding: 10px;
   cursor: pointer;
 }
-
+#curriculum_wrap.light .info_list .tool ul li {
+  color: var(--main-white);
+}
 #curriculum_wrap .info_list .tool ul li:hover {
   background-color: #969696;
   transition: all 0.6s;
@@ -496,6 +544,9 @@
   border-bottom: 1px solid var(--main-white);
   padding-bottom: 5px;
 }
+#curriculum_wrap.light .info_list .certificate ul li {
+  border-bottom: 1px solid var(--main-black);
+}
 #curriculum_wrap .info_list .study ul {
   display: flex;
   flex-direction: column;
@@ -506,14 +557,18 @@
   border-bottom: 1px solid var(--main-white);
   padding-bottom: 5px;
 }
+#curriculum_wrap.light .info_list .study ul li {
+  border-bottom: 1px solid var(--main-black);
+}
 /* 메이킹 */
 #making_wrap .making {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  padding-bottom: 60px;
 }
 #making_wrap .making img {
-  box-shadow: #0e0e0e 0px 0px 92px;
+  box-shadow: #0e0e0e 0px 0px 20px;
   border-radius: 100px;
 }

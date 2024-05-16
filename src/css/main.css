@@ -1,10 +1,3 @@
-/* 첫화면 라벨 */
-#prfLabel {
-  position: absolute;
-  top: 0;
-  right: 10%;
-  cursor: pointer;
-}
 /* index section 프로필과 자막 */
 #introduce {
   font-family: "ONE-Mobile-Title";
@@ -15,6 +8,10 @@
   padding: 40px 0;
   width: 100%;
   height: 100%;
+}
+#introduce.light {
+  color: var(--main-black);
+  background-color: var(--main-white);
 }
 #introduce .audio_wrap {
   position: relative;
