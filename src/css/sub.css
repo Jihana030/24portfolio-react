@@ -572,3 +572,12 @@
   box-shadow: #0e0e0e 0px 0px 20px;
   border-radius: 100px;
 }
+/* 날씨 */
+#weather.light {
+  background-color: var(--main-white);
+  color: var(--main-black);
+  height: calc(100vh - 60px);
+}
+#weather #weatherBox {
+  
+}
