@@ -1085,6 +1085,11 @@ Uncaught TypeError: Cannot read properties of null (reading 'main')
 오타인거면 눈이 빠져라찾아봤고.. 아마 구조적 문제인 것 같다.
 에러바운더리에 문제거나 비동기가 동기로 작동하게 했는데 안되었거나.... 흐으으음..
 
+axios로 다시 해보도록 하겠다. 첨부터. 성공하고 잘 수 있기를..!
+npm install axios
+
+node_module에 문제가 생겨서, 아마 버전문제로 다 지우고 다시 깔아보기로 했다.
+그렇게 무한 설치..
 
 
 
