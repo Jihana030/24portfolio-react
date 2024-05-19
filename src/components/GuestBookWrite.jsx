@@ -40,7 +40,7 @@ function GuestBookWrite() {
           </div>
           <div>
             <label htmlFor="detail">내용</label>
-            <textarea name="detail" id="detail" value={detail} onChange={changeDetail}></textarea>
+            <textarea name="detail" id="detail" value={detail} onChange={changeDetail} placeholder="저장하시면 수정/삭제 불가합니다."></textarea>
           </div>
           <div className="write_btn">
             <button type="reset">다시쓰기</button>

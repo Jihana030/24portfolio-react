@@ -26,7 +26,7 @@ function Main() {
           <Route path="/varies/guestBook" element={<GuestBook />} />
           <Route path="/varies/guestBook/guestBookWrite" element={<GuestBookWrite />} />
           <Route path='/curriculum' element={ <Curriculum/>} />
-          <Route path='/weather' element={ <Weather/>} />
+          <Route path='/varies/weather' element={ <Weather/>} />
         </Routes>
       </App>
     </BrowserRouter>
