@@ -13,7 +13,7 @@ export default function Layout() {
   const mobile = useMediaQuery({
     query: "(max-width:700px)",
   })
-  const [menu, setMenu]=useState(false);
+  const [menu, setMenu]=useState(true);
   const handleMenu=()=>{
     setMenu(!menu);
   }
