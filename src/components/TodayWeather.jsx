@@ -1,38 +1,57 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-function TodayWeather() {
-  const [weather, setWeather] = useState('');
-  const apiKey = process.env.REACT_APP_WEATHER_KEY;
-  const getWeather=async(lat,lon)=>{
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=kr&appid=${apiKey}`;
-    await axios.get(url).then((response)=>{
-      const data = response.data;
-      setWeather(data)
-    })
+class TodayWeather extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      temp: 0,
+      temp_max: 0,
+      temp_min: 0,
+      humidity: 0,
+      desc: "",
+      icon: "",
+      loading: true,
+    };
   }
-  let temp = Math.round(weather.temp - 273.15);
-  // icon
-  const weatherIcon = weather.weather[0].icon;
-  const weatherIconAdrs =  `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
-  useEffect(() => {
-    const getCurrentLocation = () => {
-      navigator.geolocation.getCurrentPosition((position) => {
-        let lat = position.coords.latitude;
-        let lon = position.coords.longitude;
-        getWeather(lat, lon);
+  componentDidMount() {
+    const apiKey = process.env.REACT_APP_WEATHER_KEY;
+    const cityName = "Incheon";
+    // const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=kr&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=kr&appid=${apiKey}`;
+    axios
+      .get(url)
+      .then((response) => {
+        const data = response.data;
+        this.setState({
+          city: data.name,
+          temp: Math.round(data.main.temp - 273.15),
+          temp_max: Math.round(data.main.temp_max - 273.15),
+          temp_min: Math.round(data.main.temp_min - 273.15),
+          desc: data.weather[0].description,
+          icon: data.weather[0].icon,
+          loading: false,
+        });
       })
+      .catch((err) => console.error(err));
+  }
+  render() {
+    const weatherIconAdrs = `http://openweathermap.org/img/wn/${this.state.icon}@2x.png`;
+    if (this.state.loading) {
+      return <p>Loading</p>;
+    } else {
+      return (
+        <div id="weatherBox">
+          <div>
+            <img src={weatherIconAdrs} alt="weatherIcon" />
+          </div>
+          <div className="weatherCity">{this.state.city}</div>
+          <div className="weatherTemp">{this.state.temp}℃</div>
+          <div className="weatherDesc">{this.state.desc}</div>
+        </div>
+      );
     }
-    getCurrentLocation();
-  },[]);
-  return (
-    <div id="weatherBox">
-      <div><img src={weatherIconAdrs} alt="weatherIcon" /></div>
-      <div>{weather.name}</div>
-      <div>{temp}℃</div>
-      <div>{weather.weather[0].description}</div>
-    </div>
-  );
+  }
 }
 
 export default TodayWeather;
