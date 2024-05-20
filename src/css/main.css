@@ -3,7 +3,7 @@
   font-family: "ONE-Mobile-Title";
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 40px 0;
   width: 100%;
