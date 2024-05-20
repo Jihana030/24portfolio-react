@@ -12,6 +12,7 @@
 #introduce.light {
   color: var(--main-black);
   background-color: var(--main-white);
+  height: calc(100vh - 59px);
 }
 #introduce .audio_wrap {
   position: relative;

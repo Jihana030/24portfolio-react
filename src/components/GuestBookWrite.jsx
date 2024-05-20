@@ -45,7 +45,7 @@ function GuestBookWrite() {
           <div className="write_btn">
             <button type="reset">다시쓰기</button>
             <button type="submit">
-              <Link to={"/varies/cardList/guestBook"}>저장</Link>
+              <Link to={"/varies/guestBook"}>저장</Link>
             </button>
           </div>
         </form>
