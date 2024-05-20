@@ -14,7 +14,7 @@ import Weather from './components/Weather';
 function Main() {
   const CardList = React.lazy(() => import("./components/CardList"));
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/jihana030.github.io">
       <App>
         <Routes>
           <Route path="/" element={<MainDetail />} />
@@ -25,8 +25,8 @@ function Main() {
           <Route path="/varies/harrypotter" element={<Harrypotter />} />
           <Route path="/varies/guestBook" element={<GuestBook />} />
           <Route path="/varies/guestBook/guestBookWrite" element={<GuestBookWrite />} />
-          <Route path='/curriculum' element={ <Curriculum/>} />
-          <Route path='/varies/weather' element={ <Weather/>} />
+          <Route path="/curriculum" element={<Curriculum />} />
+          <Route path="/varies/weather" element={<Weather />} />
         </Routes>
       </App>
     </BrowserRouter>
