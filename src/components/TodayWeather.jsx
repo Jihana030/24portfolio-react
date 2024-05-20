@@ -16,8 +16,9 @@ class TodayWeather extends React.Component {
   }
   componentDidMount() {
     const apiKey = process.env.REACT_APP_WEATHER_KEY;
+    const cityName = "Incheon";
     // const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=kr&appid=${apiKey}`;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=Incheon&lang=kr&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=kr&appid=${apiKey}`;
     axios
       .get(url)
       .then((response) => {
