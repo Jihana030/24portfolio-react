@@ -1145,6 +1145,22 @@ https://xionwcfm.tistory.com/372 =에러라이브러리 설치 할 것
 1. 메인 css
 2. 방명록 작성하고 저장 후 방명록으로 돌아가기
 
+=======================================
+오후 10:26 2024-05-20
+
+빌드로 발견한 오류 수정하기
+1. 404 에러 수정
+npm install gh-pages
+package.json > "script" 아래에 
+ "predeploy": "npm run build",
+ "deploy": "gh-pages -d build"
+홈페이지 항목 추가
+
+
+2. 모바일 헤더 만들기
+
+3. 호그와트 height
+
 
 
 
