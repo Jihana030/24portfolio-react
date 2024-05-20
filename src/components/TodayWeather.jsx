@@ -21,13 +21,11 @@ class TodayWeather extends React.Component {
     axios
       .get(url)
       .then((response) => {
-        console.log(response);
         const data = response.data;
         this.setState({
           temp: Math.round(data.main.temp - 273.15),
           temp_max: Math.round(data.main.temp_max - 273.15),
           temp_min: Math.round(data.main.temp_min - 273.15),
-          humidity: data.main.humidity,
           desc: data.weather[0].description,
           icon: data.weather[0].icon,
           loading: false,

@@ -578,6 +578,20 @@
   color: var(--main-black);
   height: calc(100vh - 60px);
 }
+#weather {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 #weather #weatherBox {
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  background-color: var(--sub-back);
+  border-radius: 50px;
+  padding: 30px 30px 50px;
 }
