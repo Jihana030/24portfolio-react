@@ -81,6 +81,11 @@
   color: var(--main-black);
   height: calc(100vh - 60px);
 }
+@media (max-width:700px) {
+  #guestBook_wrap.light {
+    height: 100%;
+  }
+}
 #guestBook_wrap .add_btn {
   position: absolute;
   right: 40px;
@@ -221,6 +226,9 @@
   font-size: 16px;
   font-family: "ONE-Mobile-Title";
   cursor: pointer;
+}
+#guestBook_wrap .form_wrap .write_btn button a {
+  padding: 8px 20px;
 }
 #guestBook_wrap.light .form_wrap .write_btn button a {
   color: var(--main-white);
@@ -389,6 +397,10 @@
 #harry_wrap.light {
   background-color: var(--main-white);
   color: var(--main-black);
+}
+#harry_wrap {
+  height: 100%;
+  background-color: var(--main-black);
 }
 #harry_wrap .harry_detail_wrap {
   padding: 20px;
