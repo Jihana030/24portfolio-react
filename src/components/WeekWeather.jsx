@@ -18,6 +18,7 @@ class WeekWeather extends React.Component {
       .get(url)
       .then((response) => {
         const list = response.data.list;
+        console.log(list)
         this.setState({
           loading: false,
           oneday: list[2].dt_txt.slice(5,10).replace("-", "."),
@@ -39,7 +40,7 @@ class WeekWeather extends React.Component {
           fiveday: list[34].dt_txt.slice(5,10).replace("-", "."),
           fivetemp: Math.round(list[34].main.temp - 273.15),
           fivedesc: list[34].weather[0].description,
-          fiveicon: list[34].weather[0].icon,
+          fiveicon: list[32].weather[0].icon,
         });
       })
       .catch((err) => console.error(err));

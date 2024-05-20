@@ -624,7 +624,9 @@
 #weather #weekWeatherBox > div {
   text-align: center;
   width: calc(20%);
+  padding: 0 5px;
 }
 #weather #weekWeatherBox > div > div {
   word-break: break-all;
+  padding: 5px 0;
 }

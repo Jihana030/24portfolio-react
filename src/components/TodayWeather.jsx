@@ -23,6 +23,7 @@ class TodayWeather extends React.Component {
       .then((response) => {
         const data = response.data;
         this.setState({
+          city: data.name,
           temp: Math.round(data.main.temp - 273.15),
           temp_max: Math.round(data.main.temp_max - 273.15),
           temp_min: Math.round(data.main.temp_min - 273.15),
@@ -43,9 +44,9 @@ class TodayWeather extends React.Component {
           <div>
             <img src={weatherIconAdrs} alt="weatherIcon" />
           </div>
-          <div>{}</div>
-          <div>{this.state.temp}℃</div>
-          <div>{this.state.desc}</div>
+          <div className="weatherCity">{this.state.city}</div>
+          <div className="weatherTemp">{this.state.temp}℃</div>
+          <div className="weatherDesc">{this.state.desc}</div>
         </div>
       );
     }
