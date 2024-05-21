@@ -18,43 +18,51 @@ export default function Layout() {
     setMenu(!menu);
   }
   return (
-    <header className={isLightMode?'light':'dark'}>
+    <header className={isLightMode ? "light" : "dark"}>
       <div className="logo_wrap">
-        <p>
+        <p onClick={handleMenu}>
           <Link to="/">logo</Link>
         </p>
         <ThemeMode />
       </div>
       <nav className="nav_wrap">
-        {mobile&&<span className="hamburger material-symbols-rounded" onClick={handleMenu}>menu</span>}
-        {mobile||<ul className={`row`}>
-          <li>
-            <Link to="/curriculum" >프로필</Link>
-          </li>
-          <li>
-            <a href={github}>깃허브</a>
-          </li>
-          <li>
-            <a href={figma}>피그마</a>
-          </li>
-          <li>
-            <Link to="/varies">카테고리</Link>
-          </li>
-        </ul>}
-        {mobile&&<ul className={`row ${menu && ' dis-none'}`} onClick={handleMenu}>
-          <li>
-            <Link to="/curriculum" >프로필</Link>
-          </li>
-          <li>
-            <a href={github}>깃허브</a>
-          </li>
-          <li>
-            <a href={figma}>피그마</a>
-          </li>
-          <li>
-            <Link to="/varies">카테고리</Link>
-          </li>
-        </ul>}
+        {mobile && (
+          <span className="hamburger material-symbols-rounded" onClick={handleMenu}>
+            menu
+          </span>
+        )}
+        {mobile || (
+          <ul className={`row`}>
+            <li>
+              <Link to="/curriculum">프로필</Link>
+            </li>
+            <li>
+              <a href={github}>깃허브</a>
+            </li>
+            <li>
+              <a href={figma}>피그마</a>
+            </li>
+            <li>
+              <Link to="/varies">카테고리</Link>
+            </li>
+          </ul>
+        )}
+        {mobile && (
+          <ul className={`row ${menu && " dis-none"}`} onClick={handleMenu}>
+            <li>
+              <Link to="/curriculum">프로필</Link>
+            </li>
+            <li>
+              <a href={github}>깃허브</a>
+            </li>
+            <li>
+              <a href={figma}>피그마</a>
+            </li>
+            <li>
+              <Link to="/varies">카테고리</Link>
+            </li>
+          </ul>
+        )}
       </nav>
     </header>
   );
