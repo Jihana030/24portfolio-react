@@ -14,7 +14,7 @@ import Weather from './components/Weather';
 function Main() {
   const CardList = React.lazy(() => import("./components/CardList"));
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App>
         <Routes>
           <Route path="/" element={<MainDetail />} />
