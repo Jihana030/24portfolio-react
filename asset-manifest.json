@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/24portfolio-react/static/css/main.dff89d52.css",
+    "main.js": "/24portfolio-react/static/js/main.78d345bc.js",
+    "static/media/sampleAudio.mp3": "/24portfolio-react/static/media/sampleAudio.00535c7ca204b3007cab.mp3",
+    "static/media/profile.jpg": "/24portfolio-react/static/media/profile.f184ecdc7ed9177c6b0e.jpg",
+    "static/media/harry_history.png": "/24portfolio-react/static/media/harry_history.eaf9c894d2de4e6fe937.png",
+    "static/media/harry_professor.png": "/24portfolio-react/static/media/harry_professor.273bd297bf6e766b52ba.png",
+    "static/media/harry_main.png": "/24portfolio-react/static/media/harry_main.c2ff912675ffb68b66e8.png",
+    "static/media/harry_intro.png": "/24portfolio-react/static/media/harry_intro.a437f121bf65bcf3266b.png",
+    "static/media/making.gif": "/24portfolio-react/static/media/making.b8596bd7fee0e6ccb96e.gif",
+    "static/media/luckydraw2.gif": "/24portfolio-react/static/media/luckydraw2.79cb3034519ef848897a.gif",
+    "static/media/luckydraw.png": "/24portfolio-react/static/media/luckydraw.68d102b77aab9dee5737.png",
+    "index.html": "/24portfolio-react/index.html",
+    "main.dff89d52.css.map": "/24portfolio-react/static/css/main.dff89d52.css.map",
+    "main.78d345bc.js.map": "/24portfolio-react/static/js/main.78d345bc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dff89d52.css",
+    "static/js/main.78d345bc.js"
+  ]
+}
