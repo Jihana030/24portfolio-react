@@ -17,16 +17,19 @@ function Main() {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App>
         <Routes>
-          <Route path="/" element={<MainDetail />} />
-          <Route path="/varies" element={<Varies />} />
-          <Route path="/varies/:id" element={<CardList />} />
-          <Route path="/varies/luckydraw" element={<Luckydraw />} />
-          <Route path="/varies/making" element={<Making />} />
-          <Route path="/varies/harrypotter" element={<Harrypotter />} />
-          <Route path="/varies/guestBook" element={<GuestBook />} />
-          <Route path="/varies/guestBook/guestBookWrite" element={<GuestBookWrite />} />
-          <Route path="/curriculum" element={<Curriculum />} />
-          <Route path="/varies/weather" element={<Weather />} />
+          <Route path={process.env.PUBLIC_URL + "/"} element={<MainDetail />} />
+          <Route path={process.env.PUBLIC_URL + "/varies"} element={<Varies />} />
+          <Route path={process.env.PUBLIC_URL + "/varies/:id"} element={<CardList />} />
+          <Route path={process.env.PUBLIC_URL + "/varies/luckydraw"} element={<Luckydraw />} />
+          <Route path={process.env.PUBLIC_URL + "/varies/making"} element={<Making />} />
+          <Route path={process.env.PUBLIC_URL + "/varies/harrypotter"} element={<Harrypotter />} />
+          <Route path={process.env.PUBLIC_URL + "/varies/guestBook"} element={<GuestBook />} />
+          <Route
+            path={process.env.PUBLIC_URL + "/varies/guestBook/guestBookWrite"}
+            element={<GuestBookWrite />}
+          />
+          <Route path={process.env.PUBLIC_URL + "/curriculum"} element={<Curriculum />} />
+          <Route path={process.env.PUBLIC_URL + "/varies/weather"} element={<Weather />} />
         </Routes>
       </App>
     </BrowserRouter>
