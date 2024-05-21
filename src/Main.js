@@ -17,7 +17,7 @@ function Main() {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App>
         <Routes>
-          <Route path={process.env.PUBLIC_URL + "/"} element={<MainDetail />} />
+          <Route path="/" element={<MainDetail />} />
           <Route path="/varies" element={<Varies />} />
           <Route path="/varies/:id" element={<CardList />} />
           <Route path="/varies/luckydraw" element={<Luckydraw />} />
