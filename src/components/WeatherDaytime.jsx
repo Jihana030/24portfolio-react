@@ -44,6 +44,14 @@ class WeatherDaytime extends React.Component {
           sixtemp: Math.round(list[5].main.temp - 273.15),
           sixdesc: list[5].weather[0].description,
           sixicon: list[5].weather[0].icon,
+          seventime: list[6].dt_txt.slice(10).slice(0, 3),
+          seventemp: Math.round(list[6].main.temp - 273.15),
+          sevendesc: list[6].weather[0].description,
+          sevenicon: list[6].weather[0].icon,
+          eighttime: list[7].dt_txt.slice(10).slice(0, 3),
+          eighttemp: Math.round(list[7].main.temp - 273.15),
+          eightdesc: list[7].weather[0].description,
+          eighticon: list[7].weather[0].icon,
         });
       })
       .catch((err) => console.error(err));
@@ -97,11 +105,27 @@ class WeatherDaytime extends React.Component {
           </div>
           <div>
             <div>
-              <img src={weatherIconAdrs(this.state.fiveicon)} alt="weatherIcon" />
+              <img src={weatherIconAdrs(this.state.sixicon)} alt="weatherIcon" />
             </div>
             <div>{this.state.sixtime}시</div>
             <div>{this.state.sixtemp}℃</div>
             <div>{this.state.sixdesc}</div>
+          </div>
+          <div>
+            <div>
+              <img src={weatherIconAdrs(this.state.sevenicon)} alt="weatherIcon" />
+            </div>
+            <div>{this.state.seventime}시</div>
+            <div>{this.state.seventemp}℃</div>
+            <div>{this.state.sevendesc}</div>
+          </div>
+          <div>
+            <div>
+              <img src={weatherIconAdrs(this.state.eighticon)} alt="weatherIcon" />
+            </div>
+            <div>{this.state.eighttime}시</div>
+            <div>{this.state.eighttemp}℃</div>
+            <div>{this.state.eightdesc}</div>
           </div>
         </div>
       );
