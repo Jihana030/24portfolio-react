@@ -18,7 +18,6 @@ class WeekWeather extends React.Component {
       .get(url)
       .then((response) => {
         const list = response.data.list;
-        console.log(list)
         this.setState({
           loading: false,
           oneday: list[2].dt_txt.slice(5,10).replace("-", "."),
