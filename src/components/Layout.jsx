@@ -21,7 +21,7 @@ export default function Layout() {
     <header className={isLightMode ? "light" : "dark"}>
       <div className="logo_wrap">
         <p onClick={handleMenu}>
-          <Link to={process.env.PUBLIC_URL + "/"}>logo</Link>
+          <Link to="/">logo</Link>
         </p>
         <ThemeMode />
       </div>
