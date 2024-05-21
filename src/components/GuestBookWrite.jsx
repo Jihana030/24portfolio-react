@@ -2,27 +2,37 @@ import React from "react";
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase";
 import { useState } from "react";
-import { Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useLightMode } from "./ModeContext";
 
 function GuestBookWrite() {
-  const [userName, setUserName] = useState('');
-  const [detail, setDetail] = useState('');
-
+  const [userName, setUserName] = useState("");
+  const [detail, setDetail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
   const changeName = (e) => {
     setUserName(e.target.value);
-  }
+  };
   const changeDetail = (e) => {
     setDetail(e.target.value);
-  }
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const ref = collection(db, "guest");
-    await addDoc(ref, {
-      name: userName,
-      detail: detail,
-      time: Timestamp.fromDate(new Date()),
-    });
+    let result;
+    try {
+      const ref = collection(db, "guest");
+      result = await addDoc(ref, {
+        name: userName,
+        detail: detail,
+        time: Timestamp.fromDate(new Date()),
+      });
+      navigate("/varies/guestBook");
+      setIsLoading(true);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const { isLightMode } = useLightMode();
@@ -40,13 +50,17 @@ function GuestBookWrite() {
           </div>
           <div>
             <label htmlFor="detail">내용</label>
-            <textarea name="detail" id="detail" value={detail} onChange={changeDetail} placeholder="저장하시면 수정/삭제 불가합니다."></textarea>
+            <textarea
+              name="detail"
+              id="detail"
+              value={detail}
+              onChange={changeDetail}
+              placeholder="저장하시면 수정/삭제 불가합니다."
+            ></textarea>
           </div>
           <div className="write_btn">
             <button type="reset">다시쓰기</button>
-            <button type="submit">
-              <Link to={"/varies/guestBook"}>저장</Link>
-            </button>
+            <button type="submit" disabled={isLoading}>저장</button>
           </div>
         </form>
       </div>
