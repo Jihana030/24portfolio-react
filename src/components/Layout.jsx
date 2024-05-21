@@ -41,7 +41,7 @@ export default function Layout() {
             <Link to="/varies">카테고리</Link>
           </li>
         </ul>}
-        {mobile&&<ul className={`row ${menu && ' dis-none'}`}>
+        {mobile&&<ul className={`row ${menu && ' dis-none'}`} onClick={handleMenu}>
           <li>
             <Link to="/curriculum" >프로필</Link>
           </li>
