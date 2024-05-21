@@ -28,7 +28,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://jihana030.github.io/",
+  "homepage": "https://jihana030.github.io/24portfolio-react/",
   "eslintConfig": {
     "extends": [
       "react-app",
