@@ -15,31 +15,35 @@ class WeekWeather extends React.Component {
     const apiKey = process.env.REACT_APP_WEATHER_KEY;
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=Incheon&lang=kr&appid=${apiKey}`;
     axios
-      .get(url)
-      .then((response) => {
-        const list = response.data.list;
+    .get(url)
+    .then((response) => {
+      const list = response.data.list;
+      const stateDay = (n) => list[n].dt_txt.slice(5, 10).replace("-", ".");
+      const stateTemp = (n) => Math.round(list[n].main.temp - 273.15);
+      const stateDesc = (n) => list[n].weather[0].description;
+      const stateIcon = (n) => list[n].weather[0].icon;
         this.setState({
           loading: false,
-          oneday: list[2].dt_txt.slice(5,10).replace("-", "."),
-          onetemp: Math.round(list[2].main.temp - 273.15),
-          onedesc: list[2].weather[0].description,
-          oneicon: list[2].weather[0].icon,
-          twoday: list[10].dt_txt.slice(5,10).replace("-", "."),
-          twotemp: Math.round(list[10].main.temp - 273.15),
-          twodesc: list[10].weather[0].description,
-          twoicon: list[10].weather[0].icon,
-          threeday: list[18].dt_txt.slice(5,10).replace("-", "."),
-          threetemp: Math.round(list[18].main.temp - 273.15),
-          threedesc: list[18].weather[0].description,
-          threeicon: list[18].weather[0].icon,
-          fourday: list[26].dt_txt.slice(5,10).replace("-", "."),
-          fourtemp: Math.round(list[26].main.temp - 273.15),
-          fourdesc: list[26].weather[0].description,
-          fouricon: list[26].weather[0].icon,
-          fiveday: list[34].dt_txt.slice(5,10).replace("-", "."),
-          fivetemp: Math.round(list[34].main.temp - 273.15),
-          fivedesc: list[34].weather[0].description,
-          fiveicon: list[34].weather[0].icon,
+          oneday: stateDay(2),
+          onetemp: stateTemp(2),
+          onedesc: stateDesc(2),
+          oneicon: stateIcon(2),
+          twoday: stateDay(10),
+          twotemp: stateTemp(10),
+          twodesc: stateDesc(10),
+          twoicon: stateIcon(10),
+          threeday: stateDay(18),
+          threetemp: stateTemp(18),
+          threedesc: stateDesc(18),
+          threeicon: stateIcon(18),
+          fourday: stateDay(26),
+          fourtemp: stateTemp(26),
+          fourdesc: stateDesc(26),
+          fouricon: stateIcon(26),
+          fiveday: stateDay(34),
+          fivetemp: stateTemp(34),
+          fivedesc: stateDesc(34),
+          fiveicon: stateIcon(34),
         });
       })
       .catch((err) => console.error(err));
