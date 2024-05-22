@@ -235,11 +235,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 450px;
+  height: 500px;
 }
 
 #luckydraw_wrap .lucky_wrap .draw {
   margin: 20px;
+  padding: 20px;
   cursor: pointer;
 }
 #luckydraw_wrap .lucky_wrap .draw img.draw_png {
@@ -250,7 +251,7 @@
 }
 #luckydraw_wrap .lucky_wrap .draw img.draw_gif {
   width: auto;
-  height: 450px;
+  height: 500px;
   object-fit: contain;
 }
 #luckydraw_wrap .lucky_wrap .txt_wrap {
