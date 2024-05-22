@@ -11,19 +11,14 @@ function CardList({ data }) {
   const handleMouseOut = () => {
     setIsHover(true);
   };
-  const className = `card_explan ${isHover ? "dis-none" : ""}`;
 
   return (
     <div className="card_wrap">
       <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
         <div className="card">
-          <p className="card_title">{data.title}</p>
+          <p className="card_title">{isHover && data.title}</p>
+          <p className="card_title">{isHover || data.explan}</p>
           <img src={cardImg} alt="카테고리카드" />
-        </div>
-        <div className={className}>
-          <ul>
-            <li>{data.explan}</li>
-          </ul>
         </div>
       </div>
     </div>

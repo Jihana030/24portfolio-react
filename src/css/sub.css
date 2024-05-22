@@ -37,22 +37,6 @@
   text-align: center;
   line-height: 20px;
 }
-.subject_wrap .card_wrap .card_explan {
-  position: absolute;
-  width: 140px;
-  text-align: center;
-  background-color: #f8efed;
-  color: var(--main-black);
-  border-radius: 5px;
-  padding: 10px;
-  top: 0;
-  left: 140px;
-  z-index: 9;
-}
-.subject_wrap .card_wrap .card_explan li {
-  padding: 5px;
-  line-height: 20px;
-}
 
 @keyframes cardTurn {
   0% {
@@ -641,6 +625,7 @@
   justify-content: center;
   align-items: stretch;
   margin: 0 20px 20px;
+  width: 100%;
 }
 @media (max-width: 750px) {
   #weather .longWeather {
