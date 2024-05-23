@@ -1,8 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import ThemeMode from "./ThemeMode";
 import { useLightMode } from "./ModeContext";
 import { useMediaQuery } from "react-responsive";
+
+function getLinkStyle({ isActive }) {
+  return {
+    color: isActive ? "#F61C1C" : undefined,
+  };
+}
 
 export default function Layout() {
   const github = "https://github.com/Jihana030";
@@ -12,11 +18,11 @@ export default function Layout() {
   const { isLightMode } = useLightMode();
   const mobile = useMediaQuery({
     query: "(max-width:700px)",
-  })
-  const [menu, setMenu]=useState(true);
-  const handleMenu=()=>{
+  });
+  const [menu, setMenu] = useState(true);
+  const handleMenu = () => {
     setMenu(!menu);
-  }
+  };
   return (
     <header className={isLightMode ? "light" : "dark"}>
       <div className="logo_wrap">
@@ -34,7 +40,9 @@ export default function Layout() {
         {mobile || (
           <ul className={`row`}>
             <li>
-              <Link to="/curriculum">프로필</Link>
+              <NavLink to="/curriculum" style={getLinkStyle}>
+                프로필
+              </NavLink>
             </li>
             <li>
               <a href={github}>깃허브</a>
@@ -43,14 +51,18 @@ export default function Layout() {
               <a href={figma}>피그마</a>
             </li>
             <li>
-              <Link to="/varies">카테고리</Link>
+              <NavLink to="/varies" style={getLinkStyle}>
+                카테고리
+              </NavLink>
             </li>
           </ul>
         )}
         {mobile && (
           <ul className={`row ${menu && " dis-none"}`} onClick={handleMenu}>
             <li>
-              <Link to="/curriculum">프로필</Link>
+              <NavLink to="/curriculum" style={getLinkStyle}>
+                프로필
+              </NavLink>
             </li>
             <li>
               <a href={github}>깃허브</a>
@@ -59,7 +71,9 @@ export default function Layout() {
               <a href={figma}>피그마</a>
             </li>
             <li>
-              <Link to="/varies">카테고리</Link>
+              <NavLink to="/varies" style={getLinkStyle}>
+                카테고리
+              </NavLink>
             </li>
           </ul>
         )}
