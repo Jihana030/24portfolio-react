@@ -10,6 +10,7 @@ import Making from "./components/Making";
 import Harrypotter from "./components/Harrypotter";
 import Curriculum from "./components/Curriculum";
 import Weather from "./components/Weather";
+import Chartcnt from "./components/Chartcnt";
 
 function Main() {
   const CardList = React.lazy(() => import("./components/CardList"));
@@ -27,6 +28,7 @@ function Main() {
             <Route path="guestBook" element={<GuestBook />} />
             <Route path="guestBook/guestBookWrite" element={<GuestBookWrite />} />
             <Route path="weather" element={<Weather />} />
+            <Route path="chart" element={<Chartcnt />} />
           </Route>
           <Route path="curriculum" element={<Curriculum />} />
         </Routes>
