@@ -21,7 +21,7 @@ function GuestBookWrite() {
     let result;
     try {
       const ref = collection(db, "guest");
-      result = await addDoc(ref, {
+      result = await addDoc(ref, { //eslint-disable-line no-unused-vars
         name: userName,
         detail: detail,
         time: Timestamp.fromDate(new Date()),
