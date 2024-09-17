@@ -5,8 +5,10 @@ function OlderTime() {
   const nowMonth = nowDate.getMonth() + 1;
   const firstYear = 2023;
   const firstMonth = 5;
-  const year = nowYear - firstYear;
-  const month = nowMonth - firstMonth;
+  const lastYear = 2024;
+  const lastMonth = 7;
+  const year = lastYear - firstYear;
+  const month = lastMonth - firstMonth;
 
   return (
     <span>

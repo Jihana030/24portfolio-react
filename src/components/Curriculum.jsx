@@ -21,7 +21,7 @@ function Curriculum() {
             </h2>
             <ul>
               <li className="name">스피드옥션</li>
-              <li className="day">23.05.04 ~ </li>
+              <li className="day">23.05.04 ~ 24.07.31</li>
               <li className="job">퍼블리셔, 웹디자인</li>
             </ul>
           </div>
@@ -59,6 +59,9 @@ function Curriculum() {
                 그린컴퓨터아트학원
                 <br />
                 (기업요구를 반영한 디지털 비즈니스 웹앱(UIUX)디자인 & 개발자 양성과정)
+              </li>
+              <li>
+                figma 강의
               </li>
             </ul>
           </div>
