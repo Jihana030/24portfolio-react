@@ -60,6 +60,9 @@ function Curriculum() {
                 <br />
                 (기업요구를 반영한 디지털 비즈니스 웹앱(UIUX)디자인 & 개발자 양성과정)
               </li>
+              <li>
+                figma 강의
+              </li>
             </ul>
           </div>
         </div>
