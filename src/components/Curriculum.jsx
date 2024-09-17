@@ -21,7 +21,7 @@ function Curriculum() {
             </h2>
             <ul>
               <li className="name">스피드옥션</li>
-              <li className="day">23.05.04 ~ </li>
+              <li className="day">23.05.04 ~ 24.07.31</li>
               <li className="job">퍼블리셔, 웹디자인</li>
             </ul>
           </div>
